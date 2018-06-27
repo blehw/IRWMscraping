@@ -35,7 +35,7 @@ containers = table.findAll('tr')[1:]
 filename = 'pin_descriptions.csv'
 f = open(filename, 'w')
 headers = 'Pin #, Agreements, Proposal Title, Applicant, County, WaterShed, RWQCB, Req Funds, Status'
-f.write(headers)
+f.write(headers + '\n')
 for container in containers:
   pin = container.a.text
   description = container.findAll('td')[1:]
