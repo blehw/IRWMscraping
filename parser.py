@@ -39,7 +39,7 @@ f.write(headers + '\n')
 for container in containers:
   pin = container.a.text
   description = container.findAll('td')[1:]
-  agreement = description[0].text
+  agreement = description[0].text.strip()
   proposal = description[1].text
   applicant = description[2].text
   county = description[3].text
