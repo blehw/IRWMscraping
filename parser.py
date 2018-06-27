@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.ui import Select
+import time
 
 url = 'http://faast.waterboards.ca.gov/Public_Interface/PublicPropSearchMain.aspx'
 # headers = {
@@ -11,7 +12,7 @@ url = 'http://faast.waterboards.ca.gov/Public_Interface/PublicPropSearchMain.asp
 # }
 
 # get to appropriate page
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 driver.get(url)
 link = driver.find_element_by_id("GotoSearch")
 link.click()
@@ -37,8 +38,12 @@ containers = table.findAll('tr')[1:]
 # write each row of data to csv file
 filename = 'pin_descriptions.csv'
 f = open(filename, 'w')
-f.write(headers + '\n')
+
+headerBool = True
+
 for container in containers:
+
+  #scrape info from first page
   pin = container.a.text
   description = container.findAll('td')[1:]
   agreement = description[0].text.strip()
@@ -50,6 +55,41 @@ for container in containers:
   reqfunds = description[6].text
   status = description[7].text
 
-  f.write(pin + ',' + agreement + ',' + '"' + proposal + '"' + ',' + '"' + applicant + '"' + ',' + '"' + county + '"' + ',' + '"' + watershed + '"' + ',' + '"' + rwqcb + '"' + ',' + '"' + reqfunds + '"' + ',' + status + '\n')
+  #click through to form
+  time.sleep(0.5)
+  driver.find_element_by_link_text(pin).click()
+  detail_doc = driver.page_source
+  detail_soup = BeautifulSoup(detail_doc, 'html.parser')
+  #print(detail_soup.prettify())
+
+  #scrape info from second page
+  overview = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_ProposalGeneralInfoFV")
+  overview_containers = overview.find('tr').findAll('tr')
+  data = pin + ',' + agreement + ',' + proposal.replace(',', '|') + ',' + applicant.replace(',', '|') + ',' + county.replace(',', '|') + ',' + watershed.replace(',', '|') + ',' + rwqcb.replace(',', '|') + ',' + reqfunds.replace(',', '|') + ',' + status + '\n'
+  for overview_container in overview_containers:
+  	oDescription = overview_container.find("td", {"class": "left_column1"})
+  	if (oDescription != None):
+  		label = oDescription.text.strip()[:-1]
+  		headers = headers + ", " + label
+  		data = data + ", " + overview_container.find("td", {"class": "right_column"}).text.strip()[:-1].replace(',', '|')
+  	else:
+  		oDescription = overview_container.find("td", {"class": "left_column"})
+  		if (oDescription != None):
+  			label = oDescription.text.strip()[:-1]
+  			headers = headers + ", " + label
+  			data = data + ", " + overview_container.find("td", {"class": "right_column"}).text.strip()[:-1].replace(',', '|')
+
+  	funding = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV")
+  	funding_containers = funding.findAll('tr')
+  	for funding_container in funding_containers:
+  		print(funding_container.text)
+
+  driver.execute_script("window.history.go(-1)")
+
+  if (headerBool):
+  	f.write(headers + '\n')
+  	headerBool = False
+
+  f.write(data)
 
 f.close()
