@@ -48,6 +48,6 @@ for container in containers:
   reqfunds = description[6].text
   status = description[7].text
 
-  f.write(pin + ',' + agreement + ',' + proposal.replace(',', '|') + ',' + applicant.replace(',', '|') + ',' + county.replace(',', '|') + ',' + watershed.replace(',', '|') + ',' + rwqcb.replace(',', '|') + ',' + reqfunds.replace(',', '|') + ',' + status + '\n')
+  f.write(pin + ',' + agreement + ',' + '"' + proposal + '"' + ',' + '"' + applicant + '"' + ',' + '"' + county + '"' + ',' + '"' + watershed + '"' + ',' + '"' + rwqcb + '"' + ',' + '"' + reqfunds + '"' + ',' + status + '\n')
 
 f.close()
