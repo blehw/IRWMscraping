@@ -25,16 +25,18 @@ html_doc = driver.page_source
 page_soup = BeautifulSoup(html_doc, 'html.parser')
 table = page_soup.find(id="ContentPlaceHolder1_PublicProposalSearchGV")
 
-# grab labels for data
-labels = table.tbody.tr # haven't yet figured out how to loop through this and extract each label's text one at a time
+# grab headers for data
+labels = table.tbody.tr.findAll('th')
+headers = ''
+for th in labels:
+  headers += th.text + ', '
 
-# grab each row of data
+# grab each row of data for pins' descriptions
 containers = table.findAll('tr')[1:]
 
 # write each row of data to csv file
 filename = 'pin_descriptions.csv'
 f = open(filename, 'w')
-headers = 'Pin #, Agreements, Proposal Title, Applicant, County, WaterShed, RWQCB, Req Funds, Status'
 f.write(headers + '\n')
 for container in containers:
   pin = container.a.text
