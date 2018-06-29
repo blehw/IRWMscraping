@@ -47,13 +47,13 @@ for container in containers:
 	pin = container.a.text
 	description = container.findAll('td')[1:]
 	agreement = description[0].text.strip()
-	proposal = description[1].text
-	applicant = description[2].text
-	county = description[3].text
-	watershed = description[4].text
-	rwqcb = description[5].text
-	reqfunds = description[6].text
-	status = description[7].text
+	proposal = description[1].text.strip()
+	applicant = description[2].text.strip()
+	county = description[3].text.strip()
+	watershed = description[4].text.strip()
+	rwqcb = description[5].text.strip()
+	reqfunds = description[6].text.strip()
+	status = description[7].text.strip()
 
 	#click through to form
 	time.sleep(0.5)
@@ -65,33 +65,33 @@ for container in containers:
 	#scrape info from second page
 	overview = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_ProposalGeneralInfoFV")
 	overview_containers = overview.find('tr').findAll('tr')
-	data = pin + ',' + agreement + ',' + proposal.replace(',', '|') + ',' + applicant.replace(',', '|') + ',' + county.replace(',', '|') + ',' + watershed.replace(',', '|') + ',' + rwqcb.replace(',', '|') + ',' + reqfunds.replace(',', '|') + ',' + status
+	data = pin + ',' + agreement + ',"' + proposal + '","' + applicant + '","' + county + '","' + watershed + '","' + rwqcb + '","' + reqfunds + '","' + status
 	for overview_container in overview_containers:
 		oDescription = overview_container.find("td", {"class": "left_column1"})
 		if (oDescription != None):
 			label = oDescription.text.strip()[:-1]
 			if (headerBool):
-				headers += label + ", "
+				headers += label + ','
 			if "Latitude" not in label:
-				data += ", " + overview_container.find("td", {"class": "right_column"}).text.strip().replace(',', '|')
+				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip() + '"'
 			else:
-				data += ", " + overview_container.find("td", {"class": "right_column"}).text.strip()[:4].replace(',', '|')
+				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip()[:4] + '"'
 		else:
 			oDescription = overview_container.find("td", {"class": "left_column"})
 			if (oDescription != None):
 				label = oDescription.text.strip()[:-1]
 				if (headerBool):
-					headers += label + ", "
+					headers += label + ','
 				if "Latitude" not in label:
-					data += ", " + overview_container.find("td", {"class": "right_column"}).text.strip().replace(',', '|')
+					data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip() + '"'
 				else:
-					data += ", " + overview_container.find("td", {"class": "right_column"}).text.strip()[:4].replace(',', '|')
+					data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip()[:4] + '"'
 
 	funding = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV")
 	funding_labels = funding.tbody.tr.findAll('th')
 	for th in funding_labels:
 		if (headerBool):
-			headers += th.text + ', '
+			headers += th.text + ','
 	funding_containers = funding.findAll('tr')[1:]
 	program_data = ""
 	applied_data = ""
@@ -101,8 +101,8 @@ for container in containers:
 		program_data += funding_description[0].text + " "
 		applied_data += funding_description[1].text + " "
 		amount_data += funding_description[2].text + " "
-	data = data + ", " + program_data.strip() + ", " + applied_data.strip() + ", " + amount_data.strip()
-			
+	data = data + "," + program_data.strip() + "," + applied_data.strip() + "," + amount_data.strip()
+
 	driver.execute_script("window.history.go(-1)")
 
 	if (headerBool):
