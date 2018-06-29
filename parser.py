@@ -43,56 +43,73 @@ headerBool = True
 
 for container in containers:
 
-	#scrape info from first page
+	# scrape info from first page
 	pin = container.a.text
 	description = container.findAll('td')[1:]
 	agreement = description[0].text.strip()
-	proposal = description[1].text
-	applicant = description[2].text
-	county = description[3].text
-	watershed = description[4].text
-	rwqcb = description[5].text
-	reqfunds = description[6].text
-	status = description[7].text
+	proposal = description[1].text.strip()
+	applicant = description[2].text.strip()
+	county = description[3].text.strip()
+	watershed = description[4].text.strip()
+	rwqcb = description[5].text.strip()
+	reqfunds = description[6].text.strip()
+	status = description[7].text.strip()
+	data = pin + ',' + agreement + ',"' + proposal + '","' + applicant + '","' + county + '","' + watershed + '","' + rwqcb + '","' + reqfunds + '","' + status + '"'
 
-	#click through to form
+	# click through to form
 	time.sleep(0.5)
 	driver.find_element_by_link_text(pin).click()
 	detail_doc = driver.page_source
 	detail_soup = BeautifulSoup(detail_doc, 'html.parser')
 	#print(detail_soup.prettify())
 
-	#scrape info from second page
+	# scrape info from second page
 	overview = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_ProposalGeneralInfoFV")
 	overview_containers = overview.find('tr').findAll('tr')
+<<<<<<< HEAD
 	data = pin + ',' + agreement + ',' + '"' + proposal + '"' + ',' + '"' + applicant + '"' + ',' + '"' + county + '"' + ',' + '"' + watershed + '"' + ',' + '"' + rwqcb + '"' + ',' + '"' + reqfunds + '"' + ',' + status
+=======
+
+>>>>>>> 84cd3427f1c1de6ff78924b9e6e4c700ca8e97ba
 	for overview_container in overview_containers:
 		oDescription = overview_container.find("td", {"class": "left_column1"})
 		if (oDescription != None):
 			label = oDescription.text.strip()[:-1]
 			if (headerBool):
-				headers += label + ", "
+				headers += label + ','
 			if "Latitude" not in label:
+<<<<<<< HEAD
 				data += ', ' + '"' + overview_container.find("td", {"class": "right_column"}).text.strip() + '"'
 			else:
 				#need to fix
 				data += ', ' + '"' + overview_container.find("td", {"class": "right_column"}).text.strip()[:4] + '"'
+=======
+				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace(',','|') + '"'
+			else:
+				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip()[:4] + '"'
+>>>>>>> 84cd3427f1c1de6ff78924b9e6e4c700ca8e97ba
 		else:
 			oDescription = overview_container.find("td", {"class": "left_column"})
 			if (oDescription != None):
 				label = oDescription.text.strip()[:-1]
 				if (headerBool):
-					headers += label + ", "
+					headers += label + ','
 				if "Latitude" not in label:
+<<<<<<< HEAD
 					data += ", " + '"' + overview_container.find("td", {"class": "right_column"}).text.strip() + '"'
 				else:
 					data += ", " + '"' + overview_container.find("td", {"class": "right_column"}).text.strip()[:4] + '"'
+=======
+					data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip() + '"'
+				else:
+					data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip()[:4] + '"'
+>>>>>>> 84cd3427f1c1de6ff78924b9e6e4c700ca8e97ba
 
 	funding = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV")
 	funding_labels = funding.tbody.tr.findAll('th')
 	for th in funding_labels:
 		if (headerBool):
-			headers += th.text + ', '
+			headers += th.text + ','
 	funding_containers = funding.findAll('tr')[1:]
 	program_data = ""
 	applied_data = ""
@@ -102,12 +119,17 @@ for container in containers:
 		program_data += funding_description[0].text + " "
 		applied_data += funding_description[1].text + " "
 		amount_data += funding_description[2].text + " "
+<<<<<<< HEAD
 	data += ", " + '"' + program_data.strip() + '"' + ", " + '"' + applied_data.strip() + '"' + ", " + '"' + amount_data.strip() + '"'
 			
+=======
+	data = data + ',"' + program_data.strip() + ',"' + applied_data.strip() + ',"' + amount_data.strip() + '"'
+
+>>>>>>> 84cd3427f1c1de6ff78924b9e6e4c700ca8e97ba
 	driver.execute_script("window.history.go(-1)")
 
 	if (headerBool):
-		f.write(headers[:-2] + '\n')
+		f.write(headers[:-1] + '\n')
 		headerBool = False
 
 	f.write(data + '\n')
