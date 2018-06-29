@@ -65,12 +65,8 @@ for container in containers:
 
 	# scrape info from second page
 	overview = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_ProposalGeneralInfoFV")
-	overview_containers = overview.find('tr').findAll('tr')
-<<<<<<< HEAD
-	data = pin + ',' + agreement + ',' + '"' + proposal + '"' + ',' + '"' + applicant + '"' + ',' + '"' + county + '"' + ',' + '"' + watershed + '"' + ',' + '"' + rwqcb + '"' + ',' + '"' + reqfunds + '"' + ',' + status
-=======
+	overview_containers = overview.find('tr').findAll('tr') 
 
->>>>>>> 84cd3427f1c1de6ff78924b9e6e4c700ca8e97ba
 	for overview_container in overview_containers:
 		oDescription = overview_container.find("td", {"class": "left_column1"})
 		if (oDescription != None):
@@ -78,16 +74,10 @@ for container in containers:
 			if (headerBool):
 				headers += label + ','
 			if "Latitude" not in label:
-<<<<<<< HEAD
-				data += ', ' + '"' + overview_container.find("td", {"class": "right_column"}).text.strip() + '"'
+				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip() + '"'
 			else:
 				#need to fix
-				data += ', ' + '"' + overview_container.find("td", {"class": "right_column"}).text.strip()[:4] + '"'
-=======
 				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace(',','|') + '"'
-			else:
-				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip()[:4] + '"'
->>>>>>> 84cd3427f1c1de6ff78924b9e6e4c700ca8e97ba
 		else:
 			oDescription = overview_container.find("td", {"class": "left_column"})
 			if (oDescription != None):
@@ -95,15 +85,9 @@ for container in containers:
 				if (headerBool):
 					headers += label + ','
 				if "Latitude" not in label:
-<<<<<<< HEAD
-					data += ", " + '"' + overview_container.find("td", {"class": "right_column"}).text.strip() + '"'
-				else:
-					data += ", " + '"' + overview_container.find("td", {"class": "right_column"}).text.strip()[:4] + '"'
-=======
 					data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip() + '"'
 				else:
 					data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip()[:4] + '"'
->>>>>>> 84cd3427f1c1de6ff78924b9e6e4c700ca8e97ba
 
 	funding = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV")
 	funding_labels = funding.tbody.tr.findAll('th')
@@ -119,13 +103,8 @@ for container in containers:
 		program_data += funding_description[0].text + " "
 		applied_data += funding_description[1].text + " "
 		amount_data += funding_description[2].text + " "
-<<<<<<< HEAD
-	data += ", " + '"' + program_data.strip() + '"' + ", " + '"' + applied_data.strip() + '"' + ", " + '"' + amount_data.strip() + '"'
-			
-=======
 	data = data + ',"' + program_data.strip() + ',"' + applied_data.strip() + ',"' + amount_data.strip() + '"'
 
->>>>>>> 84cd3427f1c1de6ff78924b9e6e4c700ca8e97ba
 	driver.execute_script("window.history.go(-1)")
 
 	if (headerBool):
