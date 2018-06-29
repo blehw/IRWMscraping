@@ -74,7 +74,7 @@ for container in containers:
 			if (headerBool):
 				headers += label + ','
 			if "Latitude" not in label:
-				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip() + '"'
+				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace(',','|') + '"'
 			else:
 				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip()[:4] + '"'
 		else:
@@ -107,7 +107,7 @@ for container in containers:
 	driver.execute_script("window.history.go(-1)")
 
 	if (headerBool):
-		f.write(headers[:-2] + '\n')
+		f.write(headers[:-1] + '\n')
 		headerBool = False
 
 	f.write(data + '\n')
