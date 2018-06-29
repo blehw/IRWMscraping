@@ -73,21 +73,15 @@ for container in containers:
 			label = oDescription.text.strip()[:-1]
 			if (headerBool):
 				headers += label + ','
-			if "Latitude" not in label:
-				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip() + '"'
-			else:
-				#need to fix
-				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace(',','|') + '"'
+			#need to fix
+			data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace(',','|') + '"'
 		else:
 			oDescription = overview_container.find("td", {"class": "left_column"})
 			if (oDescription != None):
 				label = oDescription.text.strip()[:-1]
 				if (headerBool):
 					headers += label + ','
-				if "Latitude" not in label:
-					data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip() + '"'
-				else:
-					data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip()[:4] + '"'
+				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace(',','|') + '"'
 
 	funding = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV")
 	funding_labels = funding.tbody.tr.findAll('th')
@@ -100,10 +94,32 @@ for container in containers:
 	amount_data = ""
 	for funding_container in funding_containers:
 		funding_description = funding_container.findAll('td')
-		program_data += funding_description[0].text + " "
-		applied_data += funding_description[1].text + " "
-		amount_data += funding_description[2].text + " "
-	data = data + ',"' + program_data.strip() + ',"' + applied_data.strip() + ',"' + amount_data.strip() + '"'
+		program_data += funding_description[0].text.strip() + "/"
+		applied_data += funding_description[1].text.strip() + "/"
+		amount_data += funding_description[2].text.strip() + "/"
+	data += ',"' + program_data[:-1] + '","' + applied_data[:-1] + '","' + amount_data[:-1] + '"'
+
+	management = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV")
+	management_labels = management.tbody.tr.findAll('th')
+	for th in management_labels:
+		if (headerBool):
+			headers += th.text + ','
+	management_containers = management.findAll('tr')[1:]
+	role = ""
+	first_name = ""
+	last_name = ""
+	phone = ""
+	fax = ""
+	email = ""
+	for management_container in management_containers:
+		management_description = management_container.findAll('td')
+		role = management_description[0].text.strip() + "/"
+		first_name = management_description[1].text.strip() + "/"
+		last_name = management_description[2].text.strip() + "/"
+		phone = management_description[3].text.strip() + "/"
+		fax = management_description[4].text.strip() + "/"
+		email = management_description[5].text.strip() + "/"
+	data += ',"' + role[:-1] + '","' + first_name[:-1] + '","' + last_name[:-1] + '","' + phone[:-1] + '","' + fax[:-1] + '","' + email[:-1] + '"'
 
 	driver.execute_script("window.history.go(-1)")
 
