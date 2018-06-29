@@ -54,7 +54,7 @@ for container in containers:
 	rwqcb = description[5].text.strip()
 	reqfunds = description[6].text.strip()
 	status = description[7].text.strip()
-	data = pin + ',' + agreement + ',"' + proposal + '","' + applicant + '","' + county + '","' + watershed + '","' + rwqcb + '","' + reqfunds + '","' + status
+	data = pin + ',' + agreement + ',"' + proposal + '","' + applicant + '","' + county + '","' + watershed + '","' + rwqcb + '","' + reqfunds + '","' + status + '"'
 
 	# click through to form
 	time.sleep(0.5)
@@ -102,7 +102,7 @@ for container in containers:
 		program_data += funding_description[0].text + " "
 		applied_data += funding_description[1].text + " "
 		amount_data += funding_description[2].text + " "
-	data = data + "," + program_data.strip() + "," + applied_data.strip() + "," + amount_data.strip()
+	data = data + ',"' + program_data.strip() + ',"' + applied_data.strip() + ',"' + amount_data.strip() + '"'
 
 	driver.execute_script("window.history.go(-1)")
 
