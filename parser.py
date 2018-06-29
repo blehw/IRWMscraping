@@ -43,7 +43,7 @@ headerBool = True
 
 for container in containers:
 
-	#scrape info from first page
+	# scrape info from first page
 	pin = container.a.text
 	description = container.findAll('td')[1:]
 	agreement = description[0].text.strip()
@@ -54,18 +54,19 @@ for container in containers:
 	rwqcb = description[5].text.strip()
 	reqfunds = description[6].text.strip()
 	status = description[7].text.strip()
+	data = pin + ',' + agreement + ',"' + proposal + '","' + applicant + '","' + county + '","' + watershed + '","' + rwqcb + '","' + reqfunds + '","' + status
 
-	#click through to form
+	# click through to form
 	time.sleep(0.5)
 	driver.find_element_by_link_text(pin).click()
 	detail_doc = driver.page_source
 	detail_soup = BeautifulSoup(detail_doc, 'html.parser')
 	#print(detail_soup.prettify())
 
-	#scrape info from second page
+	# scrape info from second page
 	overview = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_ProposalGeneralInfoFV")
 	overview_containers = overview.find('tr').findAll('tr')
-	data = pin + ',' + agreement + ',"' + proposal + '","' + applicant + '","' + county + '","' + watershed + '","' + rwqcb + '","' + reqfunds + '","' + status
+
 	for overview_container in overview_containers:
 		oDescription = overview_container.find("td", {"class": "left_column1"})
 		if (oDescription != None):
