@@ -43,7 +43,7 @@ headerBool = True
 
 for container in containers:
 
-	# scrape info from first page
+	# PIN DESCRIPTION (first page)
 	pin = container.a.text
 	description = container.findAll('td')[1:]
 	agreement = description[0].text.strip()
@@ -63,7 +63,8 @@ for container in containers:
 	detail_soup = BeautifulSoup(detail_doc, 'html.parser')
 	#print(detail_soup.prettify())
 
-	# scrape info from second page
+	
+	# APPLICATION OVERVIEW (second page)
 	overview = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_ProposalGeneralInfoFV")
 	overview_containers = overview.find('tr').findAll('tr') 
 
@@ -83,6 +84,8 @@ for container in containers:
 					headers += label + ','
 				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace(',','|') + '"'
 
+	
+	# FUNDING
 	funding = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV")
 	funding_labels = funding.tbody.tr.findAll('th')
 	for th in funding_labels:
@@ -99,6 +102,8 @@ for container in containers:
 		amount_data += funding_description[2].text.strip() + "/"
 	data += ',"' + program_data[:-1] + '","' + applied_data[:-1] + '","' + amount_data[:-1] + '"'
 
+
+	# MANAGEMENT
 	management = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV")
 	management_labels = management.tbody.tr.findAll('th')
 	for th in management_labels:
@@ -120,6 +125,19 @@ for container in containers:
 		fax = management_description[4].text.strip() + "/"
 		email = management_description[5].text.strip() + "/"
 	data += ',"' + role[:-1] + '","' + first_name[:-1] + '","' + last_name[:-1] + '","' + phone[:-1] + '","' + fax[:-1] + '","' + email[:-1] + '"'
+
+
+	# APPLICANT INFORMATION
+	applicant = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_AppOrganizationInfoFV")
+	applicant_labels = applicant.tbody.tr.td.dov.findAll('div')
+	for th in applicant_labels:
+		if (headerBool):
+			headers += th.text + ','
+	
+
+
+	# PERSON SUBMITTING INFORMATION
+
 
 	driver.execute_script("window.history.go(-1)")
 
