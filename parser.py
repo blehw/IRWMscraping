@@ -151,6 +151,65 @@ for container in containers:
 	person_address = person_container[2].text.strip()
 	data += ',"' + person_name + '","' + person_phone + '","' + person_address + '"'
 
+	# LEGISLATIVE INFORMATION
+	legislative = detail_soup.find(id='ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV')
+	legislative_labels = legislative.tbody.tr.findAll('th')
+	for th in legislative_labels:
+		if (headerBool):
+			headers += th.text + ','
+	legislative_containers = legislative.findAll('tr')[1:]
+	district = ""
+	primary = ""
+	additional_districts = ""
+	for legislative_container in legislative_containers:
+		legislative_description = legislative_container.findAll('td')
+		district += legislative_description[0].text.strip() + "/"
+		primary += legislative_description[1].text.strip() + "/"
+		additional_districts += legislative_description[2].text.strip() + "/"
+	data += ',"' + district[:-1] + '","' + primary[:-1] + '","' + additional_districts[:-1] + '"'
+
+	# CONTACTS
+	contacts = detail_soup.find(id="ContentPlaceHolder1_PropAddInfo_AgencyContactListGV")
+	contacts_labels = contacts.tbody.tr.findAll('th')
+	for th in contacts_labels:
+		if (headerBool):
+			headers += th.text + ','
+	contacts_containers = contacts.findAll('tr')[1:]
+	contact_data = ""
+	contact_name = ""
+	contact_phone = ""
+	contact_email = ""
+	for contacts_container in contacts_containers:
+		contacts_description = contacts_container.findAll('td')
+		if (len(contacts_description) > 1):
+			contact_data += contacts_description[0].text.strip() + "/"
+			contact_name += contacts_description[1].text.strip() + "/"
+			contact_phone += contacts_description[2].text.strip() + "/"
+			contact_email += contacts_description[3].text.strip() + "/"
+	data += ',"' + contact_data[:-1] + '","' + contact_name[:-1] + '","' + contact_phone[:-1] + '","' + contact_email[:-1] + '"'
+
+	# COOPERATING ENTITIES
+	entities = detail_soup.find(id="ContentPlaceHolder1_PropAddInfo_CoopEntityGV")
+	entities_labels = entities.tbody.tr.findAll('th')
+	for th in entities_labels:
+		if (headerBool):
+			headers += th.text + ','
+	entities_containers = entities.findAll('tr')[1:]
+	entities_data = ""
+	entities_role = ""
+	entities_name = ""
+	entities_phone = ""
+	entities_email = ""
+	for entities_container in entities_containers:
+		entities_description = entities_container.findAll('td')
+		if (len(entities_description) > 1):
+			entities_data += entities_description[0].text.strip() + "/"
+			entities_role += entities_description[1].text.strip() + "/"
+			entities_name += entities_description[2].text.strip() + "/"
+			entities_phone += entities_description[3].text.strip() + "/"
+			entities_email += entities_description[4].text.strip() + "/"
+	data += ',"' + entities_data[:-1] + '","' + entities_role[:-1] + '","' + entities_name[:-1] + '","' + entities_phone[:-1] + '","' + entities_email[:-1] + '"'
+
 	driver.execute_script("window.history.go(-1)")
 
 	if (headerBool):
