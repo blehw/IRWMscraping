@@ -118,26 +118,38 @@ for container in containers:
 	email = ""
 	for management_container in management_containers:
 		management_description = management_container.findAll('td')
-		role = management_description[0].text.strip() + "/"
-		first_name = management_description[1].text.strip() + "/"
-		last_name = management_description[2].text.strip() + "/"
-		phone = management_description[3].text.strip() + "/"
-		fax = management_description[4].text.strip() + "/"
-		email = management_description[5].text.strip() + "/"
+		role += management_description[0].text.strip() + "/"
+		first_name += management_description[1].text.strip() + "/"
+		last_name += management_description[2].text.strip() + "/"
+		phone += management_description[3].text.strip() + "/"
+		fax += management_description[4].text.strip() + "/"
+		email += management_description[5].text.strip() + "/"
 	data += ',"' + role[:-1] + '","' + first_name[:-1] + '","' + last_name[:-1] + '","' + phone[:-1] + '","' + fax[:-1] + '","' + email[:-1] + '"'
-
 
 	# APPLICANT INFORMATION
 	applicant = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_AppOrganizationInfoFV")
-	applicant_labels = applicant.tbody.tr.td.dov.findAll('div')
+	applicant_labels = applicant.tbody.tr.td.findAll('div', {'class' : 'DivTablColumnleft'})
 	for th in applicant_labels:
 		if (headerBool):
-			headers += th.text + ','
-	
-
+			headers += 'Applicant ' + th.text.strip()[:-1] + ','
+	applicant_container = applicant.findAll('div', {'class': 'DivTablColumnright'})
+	applicant_name = applicant_container[0].text.strip()
+	applicant_division = applicant_container[1].text.strip()
+	applicant_address = applicant_container[2].text.strip()
+	data += ',"' + applicant_name + '","' + applicant_division + '","' + applicant_address + '"'
 
 	# PERSON SUBMITTING INFORMATION
-
+	person = detail_soup.find(id='ContentPlaceHolder1_PropGeneralInfo_SubmittingUserInfoFV')
+	person_labels = person.tbody.tr.td.findAll('div', {'class' : 'DivTablColumnleft'})
+	for th in person_labels:
+		if (headerBool):
+			headers += 'Person Submitting ' + th.text.strip()[:-1] + ','
+	person_container = person.findAll('div', {'class': 'DivTablColumnright'})
+	person_name = person_container[0].text.strip()
+	#need to fix for fax
+	person_phone = person_container[1].text.strip()
+	person_address = person_container[2].text.strip()
+	data += ',"' + person_name + '","' + person_phone + '","' + person_address + '"'
 
 	driver.execute_script("window.history.go(-1)")
 
