@@ -587,3 +587,15 @@ JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, l
 JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=177567375, line 1: unreachable code after return statement
 JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=177567375, line 1: unreachable code after return statement
 JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=177567375 line 1 > eval, line 1: unreachable code after return statement
+2018-07-02 19:13:44.536 plugin-container[36017:1639512] _mthid_copyDeviceInfo(288230376219157796) failed
+2018-07-02 19:13:44.538 plugin-container[36015:1639363] _mthid_copyDeviceInfo(288230376219157796) failed
+2018-07-02 19:13:44.540 plugin-container[36016:1639393] _mthid_copyDeviceInfo(288230376219157796) failed
+2018-07-03 18:01:51.969 plugin-container[36017:1639512] _mthid_copyDeviceInfo(144115188092633088) failed
+2018-07-03 18:01:51.971 plugin-container[36015:1639363] _mthid_copyDeviceInfo(144115188092633088) failed
+2018-07-03 18:01:51.986 plugin-container[36016:1639393] _mthid_copyDeviceInfo(144115188092633088) failed
+2018-07-03 18:03:12.954 plugin-container[36017:1639512] _mthid_copyDeviceInfo(144115188092633088) failed
+2018-07-03 18:03:12.956 plugin-container[36016:1639393] _mthid_copyDeviceInfo(144115188092633088) failed
+2018-07-03 18:03:12.965 plugin-container[36015:1639363] _mthid_copyDeviceInfo(144115188092633088) failed
+2018-07-03 20:14:48.737 plugin-container[36015:1639363] _mthid_copyDeviceInfo(288230376219157796) failed
+2018-07-03 20:14:48.739 plugin-container[36016:1639393] _mthid_copyDeviceInfo(288230376219157796) failed
+2018-07-03 20:14:48.742 plugin-container[36017:1639512] _mthid_copyDeviceInfo(288230376219157796) failed
