@@ -4,6 +4,52 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.ui import Select
 import time
 
+def scrapeHeaders(tableName, soup):
+	table = soup.find(id=tableName)
+	labels = table.tbody.tr.findAll('th')
+	headers = ""
+	for th in labels:
+		headers += th.text + ','
+	return headers
+
+def scrapeData(tableName, soup):
+	table = soup.find(id=tableName)
+	containers = table.findAll('tr')[1:]
+	data = []
+	initialize = True
+	for i in range(0, len(containers)):
+		description = containers[i].findAll('td')
+		if (initialize):
+			for j in range(0, len(description)):
+				data.append('')
+			initialize = False
+		for j in range(0, len(description)):
+			data[j] += description[j].text.strip() + "/"
+			print(description[j].text.strip())
+	dataStr = ',"'
+	for i in range(0, len(data)):
+		dataStr += data[i][:-1] + '","'
+	print(dataStr[:-2])
+	return dataStr[:-2]
+
+	'''
+	funding = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV")
+	funding_labels = funding.tbody.tr.findAll('th')
+	for th in funding_labels:
+		if (headerBool):
+			headers += th.text + ','
+	funding_containers = funding.findAll('tr')[1:]
+	program_data = ""
+	applied_data = ""
+	amount_data = ""
+	for funding_container in funding_containers:
+		funding_description = funding_container.findAll('td')
+		program_data += funding_description[0].text.strip() + "/"
+		applied_data += funding_description[1].text.strip() + "/"
+		amount_data += funding_description[2].text.strip() + "/"
+	data += ',"' + program_data[:-1] + '","' + applied_data[:-1] + '","' + amount_data[:-1] + '"'
+	'''
+
 url = 'http://faast.waterboards.ca.gov/Public_Interface/PublicPropSearchMain.aspx'
 # headers = {
 #     'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.13) Gecko/2009073022 Firefox/3.0.13',
@@ -86,45 +132,12 @@ for container in containers:
 
 	
 	# FUNDING
-	funding = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV")
-	funding_labels = funding.tbody.tr.findAll('th')
-	for th in funding_labels:
-		if (headerBool):
-			headers += th.text + ','
-	funding_containers = funding.findAll('tr')[1:]
-	program_data = ""
-	applied_data = ""
-	amount_data = ""
-	for funding_container in funding_containers:
-		funding_description = funding_container.findAll('td')
-		program_data += funding_description[0].text.strip() + "/"
-		applied_data += funding_description[1].text.strip() + "/"
-		amount_data += funding_description[2].text.strip() + "/"
-	data += ',"' + program_data[:-1] + '","' + applied_data[:-1] + '","' + amount_data[:-1] + '"'
-
+	headers += scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detail_soup)
+	data += scrapeData('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detail_soup)
 
 	# MANAGEMENT
-	management = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV")
-	management_labels = management.tbody.tr.findAll('th')
-	for th in management_labels:
-		if (headerBool):
-			headers += th.text + ','
-	management_containers = management.findAll('tr')[1:]
-	role = ""
-	first_name = ""
-	last_name = ""
-	phone = ""
-	fax = ""
-	email = ""
-	for management_container in management_containers:
-		management_description = management_container.findAll('td')
-		role += management_description[0].text.strip() + "/"
-		first_name += management_description[1].text.strip() + "/"
-		last_name += management_description[2].text.strip() + "/"
-		phone += management_description[3].text.strip() + "/"
-		fax += management_description[4].text.strip() + "/"
-		email += management_description[5].text.strip() + "/"
-	data += ',"' + role[:-1] + '","' + first_name[:-1] + '","' + last_name[:-1] + '","' + phone[:-1] + '","' + fax[:-1] + '","' + email[:-1] + '"'
+	headers += scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV', detail_soup)
+	data += scrapeData('ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV', detail_soup)
 
 	# APPLICANT INFORMATION
 	applicant = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_AppOrganizationInfoFV")
@@ -152,63 +165,16 @@ for container in containers:
 	data += ',"' + person_name + '","' + person_phone + '","' + person_address + '"'
 
 	# LEGISLATIVE INFORMATION
-	legislative = detail_soup.find(id='ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV')
-	legislative_labels = legislative.tbody.tr.findAll('th')
-	for th in legislative_labels:
-		if (headerBool):
-			headers += th.text + ','
-	legislative_containers = legislative.findAll('tr')[1:]
-	district = ""
-	primary = ""
-	additional_districts = ""
-	for legislative_container in legislative_containers:
-		legislative_description = legislative_container.findAll('td')
-		district += legislative_description[0].text.strip() + "/"
-		primary += legislative_description[1].text.strip() + "/"
-		additional_districts += legislative_description[2].text.strip() + "/"
-	data += ',"' + district[:-1] + '","' + primary[:-1] + '","' + additional_districts[:-1] + '"'
+	headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detail_soup)
+	data += scrapeData('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detail_soup)
 
 	# CONTACTS
-	contacts = detail_soup.find(id="ContentPlaceHolder1_PropAddInfo_AgencyContactListGV")
-	contacts_labels = contacts.tbody.tr.findAll('th')
-	for th in contacts_labels:
-		if (headerBool):
-			headers += th.text + ','
-	contacts_containers = contacts.findAll('tr')[1:]
-	contact_data = ""
-	contact_name = ""
-	contact_phone = ""
-	contact_email = ""
-	for contacts_container in contacts_containers:
-		contacts_description = contacts_container.findAll('td')
-		if (len(contacts_description) > 1):
-			contact_data += contacts_description[0].text.strip() + "/"
-			contact_name += contacts_description[1].text.strip() + "/"
-			contact_phone += contacts_description[2].text.strip() + "/"
-			contact_email += contacts_description[3].text.strip() + "/"
-	data += ',"' + contact_data[:-1] + '","' + contact_name[:-1] + '","' + contact_phone[:-1] + '","' + contact_email[:-1] + '"'
+	headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_AgencyContactListGV', detail_soup)
+	data += scrapeData('ContentPlaceHolder1_PropAddInfo_AgencyContactListGV', detail_soup)
 
 	# COOPERATING ENTITIES
-	entities = detail_soup.find(id="ContentPlaceHolder1_PropAddInfo_CoopEntityGV")
-	entities_labels = entities.tbody.tr.findAll('th')
-	for th in entities_labels:
-		if (headerBool):
-			headers += th.text + ','
-	entities_containers = entities.findAll('tr')[1:]
-	entities_data = ""
-	entities_role = ""
-	entities_name = ""
-	entities_phone = ""
-	entities_email = ""
-	for entities_container in entities_containers:
-		entities_description = entities_container.findAll('td')
-		if (len(entities_description) > 1):
-			entities_data += entities_description[0].text.strip() + "/"
-			entities_role += entities_description[1].text.strip() + "/"
-			entities_name += entities_description[2].text.strip() + "/"
-			entities_phone += entities_description[3].text.strip() + "/"
-			entities_email += entities_description[4].text.strip() + "/"
-	data += ',"' + entities_data[:-1] + '","' + entities_role[:-1] + '","' + entities_name[:-1] + '","' + entities_phone[:-1] + '","' + entities_email[:-1] + '"'
+	headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup)
+	data += scrapeData('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup)
 
 	driver.execute_script("window.history.go(-1)")
 
