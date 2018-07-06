@@ -1151,6 +1151,7 @@ JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, l
 JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
 JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
 JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+<<<<<<< HEAD
 1530858495045	geckodriver	INFO	geckodriver 0.21.0
 1530858495076	geckodriver	INFO	Listening on 127.0.0.1:64928
 1530858496117	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.MoT0bInoz3rH"
@@ -1660,3 +1661,124 @@ See /usr/include/servers/bootstrap_defs.h for the error codes.
 See /usr/include/servers/bootstrap_defs.h for the error codes.
 JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
 JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=2251327, line 1: unreachable code after return statement
+=======
+1530861400092	geckodriver	INFO	geckodriver 0.21.0
+1530861400102	geckodriver	INFO	Listening on 127.0.0.1:55915
+1530861401118	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/2v/p69_31z57pdczjk6239l3qrc0000gn/T/rust_mozprofile.5ODXiMKL3W0o"
+2018-07-06 00:16:42.700 plugin-container[6243:4166225] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8943, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 00:16:43.026 plugin-container[6244:4166261] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x873f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1530861403278	Marionette	INFO	Listening on port 55930
+1530861403357	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-06 00:16:43.359 plugin-container[6243:4166225] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x1a1b, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 00:16:43.359 plugin-container[6244:4166261] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x2627, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 00:16:43.888 plugin-container[6247:4166396] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x823f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 00:16:44.002 plugin-container[6247:4166396] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x1727, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1240469919, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1240469919 line 1 > eval, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+1530863210153	geckodriver	INFO	geckodriver 0.21.0
+1530863210164	geckodriver	INFO	Listening on 127.0.0.1:62805
+1530863211178	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/2v/p69_31z57pdczjk6239l3qrc0000gn/T/rust_mozprofile.VFO7yUXP5CDJ"
+2018-07-06 00:46:52.570 plugin-container[8547:4245413] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x803f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 00:46:52.826 plugin-container[8547:4245413] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x1853, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 00:46:52.887 plugin-container[8549:4245457] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7407, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 00:46:52.997 plugin-container[8549:4245457] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x252b, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1530863213221	Marionette	INFO	Listening on port 62820
+1530863213247	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-06 00:46:53.557 plugin-container[8550:4245618] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7b03, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 00:46:53.666 plugin-container[8550:4245618] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x251f, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=788572918, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=788572918, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=788572918 line 1 > eval, line 1: unreachable code after return statement
+1530863360655	geckodriver	INFO	geckodriver 0.21.0
+1530863360661	geckodriver	INFO	Listening on 127.0.0.1:63615
+1530863361679	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/2v/p69_31z57pdczjk6239l3qrc0000gn/T/rust_mozprofile.BtLIcRhEKgSD"
+2018-07-06 00:49:23.399 plugin-container[8749:4254811] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7c43, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 00:49:23.551 plugin-container[8750:4254849] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7303, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 00:49:23.559 plugin-container[8749:4254811] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x1627, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 00:49:23.701 plugin-container[8750:4254849] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x724b, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1530863363771	Marionette	INFO	Listening on port 63630
+1530863363853	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=566351076, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=566351076, line 1: unreachable code after return statement
+2018-07-06 00:49:24.568 plugin-container[8753:4255092] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8907, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=566351076 line 1 > eval, line 1: unreachable code after return statement
+2018-07-06 00:49:24.692 plugin-container[8753:4255092] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x881f, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+1530863670918	geckodriver	INFO	geckodriver 0.21.0
+1530863670924	geckodriver	INFO	Listening on 127.0.0.1:64837
+1530863671942	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/2v/p69_31z57pdczjk6239l3qrc0000gn/T/rust_mozprofile.chkoGhGTecog"
+2018-07-06 00:54:33.527 plugin-container[9202:4265790] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7a3f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 00:54:33.804 plugin-container[9202:4265790] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x1a47, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 00:54:33.870 plugin-container[9203:4265819] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7a43, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 00:54:33.977 plugin-container[9203:4265819] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x1a27, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1530863674124	Marionette	INFO	Listening on port 64852
+1530863674185	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-06 00:54:34.550 plugin-container[9204:4265944] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8b03, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+2018-07-06 00:54:34.647 plugin-container[9204:4265944] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8b17, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=750659084, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=750659084, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=750659084 line 1 > eval, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+1530902743008	geckodriver	INFO	geckodriver 0.21.0
+1530902743024	geckodriver	INFO	Listening on 127.0.0.1:49694
+1530902744031	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/2v/p69_31z57pdczjk6239l3qrc0000gn/T/rust_mozprofile.qEUrWsDz8wd1"
+2018-07-06 11:45:45.602 plugin-container[15283:4451012] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x753f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 11:45:45.827 plugin-container[15283:4451012] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x1a07, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 11:45:45.898 plugin-container[15284:4451059] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8443, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 11:45:45.993 plugin-container[15284:4451059] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x1827, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1530902746261	Marionette	INFO	Listening on port 49709
+1530902746289	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-06 11:45:46.648 plugin-container[15286:4451203] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8a3f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-06 11:45:46.748 plugin-container[15286:4451203] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x1947, name = 'com.apple.coredrag'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=246773382, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=246773382, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=246773382 line 1 > eval, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+>>>>>>> 4db547148ff134836bc8af382d9ab20e0ef159ca

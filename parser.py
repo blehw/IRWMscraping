@@ -7,13 +7,16 @@ import re
 
 # TODO:
 # 1. Scrape questionnaire (insert into end of pageScrape function)
-# 2. Add columns indicating round and step (also into pageScrape function?)
+# 2. Distinguish phone/email etc...
+# 3. Latitude/longitude issue?
 
-def scrapeHeaders(tableName, soup):
+def scrapeHeaders(tableName, soup, title):
 	table = soup.find(id=tableName)
 	labels = table.tbody.tr.findAll('th')
 	headers = ""
 	for th in labels:
+		if title != None:
+			headers += title + ' '
 		headers += th.text + ','
 	return headers
 
@@ -35,7 +38,7 @@ def scrapeData(tableName, soup):
 		dataStr += ',"' + data[i][:-1] + '"'
 	return dataStr
 
-def pageScrape(page, driver, fileName):
+def pageScrape(page, driver, fileName, round_num, step_num):
 	url = 'http://faast.waterboards.ca.gov/Public_Interface/PublicPropSearchMain.aspx'
 
 	# get to appropriate page
@@ -108,11 +111,11 @@ def pageScrape(page, driver, fileName):
 
 		
 		# FUNDING
-		headers += scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detail_soup)
+		headers += scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detail_soup, '')
 		data += scrapeData('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detail_soup)
 
 		# MANAGEMENT
-		headers += scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV', detail_soup)
+		headers += scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV', detail_soup, 'Manager')
 		data += scrapeData('ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV', detail_soup)
 
 		# APPLICANT INFORMATION
@@ -132,7 +135,7 @@ def pageScrape(page, driver, fileName):
 		person_labels = person.tbody.tr.td.findAll('div', {'class' : 'DivTablColumnleft'})
 		for th in person_labels:
 			if (headerBool):
-				headers += 'Person Submitting ' + th.text.strip()[:-1] + ','
+				headers += th.text.strip()[:-1] + ','
 		person_container = person.findAll('div', {'class': 'DivTablColumnright'})
 		person_name = person_container[0].text.strip()
 		#need to fix for fax
@@ -141,16 +144,16 @@ def pageScrape(page, driver, fileName):
 		data += ',"' + person_name + '","' + person_phone + '","' + person_address + '"'
 
 		# LEGISLATIVE INFORMATION
-		headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detail_soup)
+		headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detail_soup, '')
 		data += scrapeData('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detail_soup)
 
 		# CONTACTS
 		# need if statement
-		headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_AgencyContactListGV', detail_soup)
+		headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_AgencyContactListGV', detail_soup, 'Contact')
 		data += scrapeData('ContentPlaceHolder1_PropAddInfo_AgencyContactListGV', detail_soup)
 
 		# COOPERATING ENTITIES
-		headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup)
+		headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup, 'Cooperating Entity')
 		data += scrapeData('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup)
 
 		# Questionnaire
@@ -169,30 +172,30 @@ def pageScrape(page, driver, fileName):
 
 		driver.execute_script("window.history.go(-1)")
 
-		if (headerBool):
-			f.write(headers[:-1] + '\n')
+		if (headerBool and round_num == 1 and step_num == ''):
+			f.write(headers[:-1] + ',Round,Step' + '\n')
 			headerBool = False
 
-		f.write(data + '\n')
+		f.write(data + ',' + str(round_num) + ',' + str(step_num) + '\n')
 
 driver = webdriver.Firefox()
 fname = 'pin_descriptions.csv'
 f = open(fname, 'w')
 
 # Round 1
-pageScrape('310', driver, f)
+pageScrape('310', driver, f, 1, '')
 
 # Round 1, Step 1
-pageScrape('330', driver, f)
+pageScrape('330', driver, f, 1, 1)
 
 # Round 1, Step 2
-pageScrape('429', driver, f)
+pageScrape('429', driver, f, 1, 2)
 
 # Round 2, Step 1
-pageScrape('509', driver, f)
+pageScrape('509', driver, f, 2, 1)
 
 # Round 2, Step 2
-pageScrape('629', driver, f)
+pageScrape('629', driver, f, 2, 2)
 
 
 f.close()
