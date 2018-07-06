@@ -20,7 +20,7 @@ def scrapeHeaders(tableName, soup, title):
 		headers += th.text + ','
 	return headers
 
-def scrapeData(tableName, soup):
+def scrapeData(tableName, soup, numFields):
 	table = soup.find(id=tableName)
 	containers = table.findAll('tr')[1:]
 	data = []
@@ -34,8 +34,11 @@ def scrapeData(tableName, soup):
 		for j in range(0, len(description)):
 			data[j] += description[j].text.strip() + "/"
 	dataStr = ''
-	for i in range(0, len(data)):
-		dataStr += ',"' + data[i][:-1] + '"'
+	for i in range(0, numFields):
+		if (i < len(data)):
+			dataStr += ',"' + data[i][:-1] + '"'
+		else:
+			dataStr += ','
 	return dataStr
 
 def pageScrape(page, driver, fileName, round_num, step_num):
@@ -111,12 +114,14 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 
 		
 		# FUNDING
-		headers += scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detail_soup, '')
-		data += scrapeData('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detail_soup)
+		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detail_soup, '')
+		headers += newHeaders
+		data += scrapeData('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detail_soup, newHeaders.count(','))
 
 		# MANAGEMENT
-		headers += scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV', detail_soup, 'Manager')
-		data += scrapeData('ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV', detail_soup)
+		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV', detail_soup, 'Manager')
+		headers += newHeaders
+		data += scrapeData('ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV', detail_soup, newHeaders.count(','))
 
 		# APPLICANT INFORMATION
 		applicant = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_AppOrganizationInfoFV")
@@ -144,17 +149,20 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 		data += ',"' + person_name + '","' + person_phone + '","' + person_address + '"'
 
 		# LEGISLATIVE INFORMATION
-		headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detail_soup, '')
-		data += scrapeData('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detail_soup)
+		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detail_soup, '')
+		headers += newHeaders
+		data += scrapeData('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detail_soup, newHeaders.count(','))
 
 		# CONTACTS
 		# need if statement
-		headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_AgencyContactListGV', detail_soup, 'Contact')
-		data += scrapeData('ContentPlaceHolder1_PropAddInfo_AgencyContactListGV', detail_soup)
+		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropAddInfo_AgencyContactListGV', detail_soup, 'Contact')
+		headers += newHeaders
+		data += scrapeData('ContentPlaceHolder1_PropAddInfo_AgencyContactListGV', detail_soup, newHeaders.count(','))
 
 		# COOPERATING ENTITIES
-		headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup, 'Cooperating Entity')
-		data += scrapeData('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup)
+		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup, 'Cooperating Entity')
+		headers += newHeaders
+		data += scrapeData('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup, newHeaders.count(','))
 
 		# Questionnaire
 		questionnaire_data = ''
@@ -169,10 +177,9 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 				if (d.text.strip() != ''):
 					data += ',"' + d.text.strip() + '"'
 
-
 		driver.execute_script("window.history.go(-1)")
 
-		if (headerBool and round_num == 1 and step_num == ''):
+		if (headerBool):
 			f.write(headers[:-1] + ',Round,Step' + '\n')
 			headerBool = False
 
