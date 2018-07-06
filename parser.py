@@ -30,11 +30,11 @@ def scrapeData(tableName, soup):
 		for j in range(0, len(description)):
 			data[j] += description[j].text.strip() + "/"
 	dataStr = ',"'
-	for i in range(0, len(data)):
+	for i in range(0, len(data)): 
 		dataStr += data[i][:-1] + '","'
 	return dataStr[:-2]
 
-def pageScrape(page, driver, fileName):
+def pageScrape(page, driver, fileName, round_num, step_num):
 	url = 'http://faast.waterboards.ca.gov/Public_Interface/PublicPropSearchMain.aspx'
 	# headers = {
 	#     'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.13) Gecko/2009073022 Firefox/3.0.13',
@@ -159,30 +159,30 @@ def pageScrape(page, driver, fileName):
 
 		driver.execute_script("window.history.go(-1)")
 
-		if (headerBool):
-			f.write(headers[:-1] + '\n')
+		if (headerBool and round_num == 1 and step_num == ''):
+			f.write(headers[:-1] + ',Round,Step' + '\n')
 			headerBool = False
 
-		f.write(data + '\n')
+		f.write(data + ',' + str(round_num) + ',' + str(step_num) + '\n')
 
 driver = webdriver.Firefox()
 fname = 'pin_descriptions.csv'
 f = open(fname, 'w')
 
 # Round 1
-pageScrape('310', driver, f)
+pageScrape('310', driver, f, 1, '')
 
 # Round 1, Step 1
-pageScrape('330', driver, f)
+pageScrape('330', driver, f, 1, 1)
 
 # Round 1, Step 2
-pageScrape('429', driver, f)
+pageScrape('429', driver, f, 1, 2)
 
 # Round 2, Step 1
-pageScrape('509', driver, f)
+pageScrape('509', driver, f, 2, 1)
 
 # Round 2, Step 2
-pageScrape('629', driver, f)
+pageScrape('629', driver, f, 2, 2)
 
 
 f.close()
