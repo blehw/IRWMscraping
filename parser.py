@@ -6,13 +6,16 @@ import time
 
 # TODO:
 # 1. Scrape questionnaire (insert into end of pageScrape function)
-# 2. Add columns indicating round and step (also into pageScrape function?)
+# 2. Distinguish phone/email etc...
+# 3. Latitude/longitude issue?
 
-def scrapeHeaders(tableName, soup):
+def scrapeHeaders(tableName, soup, title):
 	table = soup.find(id=tableName)
 	labels = table.tbody.tr.findAll('th')
 	headers = ""
 	for th in labels:
+		if title != None:
+			headers += title + ' '
 		headers += th.text + ','
 	return headers
 
@@ -28,7 +31,9 @@ def scrapeData(tableName, soup):
 				data.append('')
 			initialize = False
 		for j in range(0, len(description)):
-			data[j] += description[j].text.strip() + "/"
+			data[j] += description[j].text.strip()
+			if description[j].text.strip() != None:
+				data[j] += '/'
 	dataStr = ',"'
 	for i in range(0, len(data)): 
 		dataStr += data[i][:-1] + '","'
@@ -112,11 +117,11 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 
 		
 		# FUNDING
-		headers += scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detail_soup)
+		headers += scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detail_soup, '')
 		data += scrapeData('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detail_soup)
 
 		# MANAGEMENT
-		headers += scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV', detail_soup)
+		headers += scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV', detail_soup, 'Manager')
 		data += scrapeData('ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV', detail_soup)
 
 		# APPLICANT INFORMATION
@@ -136,7 +141,7 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 		person_labels = person.tbody.tr.td.findAll('div', {'class' : 'DivTablColumnleft'})
 		for th in person_labels:
 			if (headerBool):
-				headers += 'Person Submitting ' + th.text.strip()[:-1] + ','
+				headers += th.text.strip()[:-1] + ','
 		person_container = person.findAll('div', {'class': 'DivTablColumnright'})
 		person_name = person_container[0].text.strip()
 		#need to fix for fax
@@ -145,16 +150,16 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 		data += ',"' + person_name + '","' + person_phone + '","' + person_address + '"'
 
 		# LEGISLATIVE INFORMATION
-		headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detail_soup)
+		headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detail_soup, '')
 		data += scrapeData('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detail_soup)
 
 		# CONTACTS
 		# need if statement
-		headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_AgencyContactListGV', detail_soup)
+		headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_AgencyContactListGV', detail_soup, 'Contact')
 		data += scrapeData('ContentPlaceHolder1_PropAddInfo_AgencyContactListGV', detail_soup)
 
 		# COOPERATING ENTITIES
-		headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup)
+		headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup, 'Cooperating Entity')
 		data += scrapeData('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup)
 
 		driver.execute_script("window.history.go(-1)")
