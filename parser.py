@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.ui import Select
 import time
+import re
 
 # TODO:
 # 1. Scrape questionnaire (insert into end of pageScrape function)
@@ -29,18 +30,13 @@ def scrapeData(tableName, soup):
 			initialize = False
 		for j in range(0, len(description)):
 			data[j] += description[j].text.strip() + "/"
-	dataStr = ',"'
+	dataStr = ''
 	for i in range(0, len(data)):
-		dataStr += data[i][:-1] + '","'
-	return dataStr[:-2]
+		dataStr += ',"' + data[i][:-1] + '"'
+	return dataStr
 
 def pageScrape(page, driver, fileName):
 	url = 'http://faast.waterboards.ca.gov/Public_Interface/PublicPropSearchMain.aspx'
-	# headers = {
-	#     'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.13) Gecko/2009073022 Firefox/3.0.13',
-	#     'HTTP_ACCEPT': 'text/html,application/xhtml+xml,application/xml; q=0.9,*/*; q=0.8',
-	#     'Content-Type': 'application/x-www-form-urlencoded'
-	# }
 
 	# get to appropriate page
 	driver.get(url)
@@ -60,7 +56,7 @@ def pageScrape(page, driver, fileName):
 	labels = table.tbody.tr.findAll('th')
 	headers = ''
 	for th in labels:
-		headers += th.text + ', '
+		headers += '"' + th.text + '",'
 
 	# grab each row of data for pins' descriptions
 	containers = table.findAll('tr')[1:]
@@ -156,6 +152,20 @@ def pageScrape(page, driver, fileName):
 		# COOPERATING ENTITIES
 		headers += scrapeHeaders('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup)
 		data += scrapeData('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup)
+
+		# Questionnaire
+		questionnaire_data = ''
+		questionnaire_headers = detail_soup.findAll(id=re.compile('^ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_QText_'))
+		for th in questionnaire_headers:
+			if (headerBool):
+				headers += '"' + th.text.strip() + '",'
+		questionnaire_data = detail_soup.findAll('span', {'id' : re.compile('^ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_')})
+		for d in questionnaire_data:
+			newD = str(d).replace('ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_', '')
+			if 'Ans' in str(newD):
+				if (d.text.strip() != ''):
+					data += ',"' + d.text.strip() + '"'
+
 
 		driver.execute_script("window.history.go(-1)")
 
