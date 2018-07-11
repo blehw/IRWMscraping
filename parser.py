@@ -75,13 +75,13 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 		description = container.findAll('td')[1:]
 		agreement = description[0].text.strip()
 		proposal = description[1].text.strip()
-		applicant = description[2].text.strip()
+		applicant_title = description[2].text.strip()
 		county = description[3].text.strip()
 		watershed = description[4].text.strip()
 		rwqcb = description[5].text.strip()
 		reqfunds = description[6].text.strip()
 		status = description[7].text.strip()
-		data = pin + ',' + agreement + ',"' + proposal + '","' + applicant + '","' + county + '","' + watershed + '","' + rwqcb + '","' + reqfunds + '","' + status + '"'
+		data = pin + ',' + agreement + ',"' + proposal + '","' + applicant_title + '","' + county + '","' + watershed + '","' + rwqcb + '","' + reqfunds + '","' + status + '"'
 
 		# click through to form
 		time.sleep(0.75)
@@ -101,16 +101,13 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 				label = oDescription.text.strip()[:-1]
 				if (headerBool):
 					headers += label + ','
-				#need to fix
-				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace('"',"'") + '"'
-			else:
-				oDescription = overview_container.find("td", {"class": "left_column"})
-				if (oDescription != None):
-					label = oDescription.text.strip()[:-1]
+				if 'Latitude' in label:
 					if (headerBool):
-						headers += label + ','
+						headers += 'Longitude,'
+					coordinates = overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace('"',"'").split('Longitude:')
+					data += ',"' + coordinates[0].strip() + '","' + coordinates[1].strip() + '"'
+				else:
 					data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace('"',"'") + '"'
-
 		
 		# FUNDING
 		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detail_soup, '')
@@ -140,12 +137,13 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 		for th in person_labels:
 			if (headerBool):
 				headers += th.text.strip()[:-1] + ','
+				if 'Submitter Phone' in th.text.strip()[:-1]:
+					headers += 'Submitter Fax,'
 		person_container = person.findAll('div', {'class': 'DivTablColumnright'})
 		person_name = person_container[0].text.strip()
-		#need to fix for fax
-		person_phone = person_container[1].text.strip()
+		person_phone_fax =  person_container[1].text.strip().split('Fax:')
 		person_address = person_container[2].text.strip()
-		data += ',"' + person_name + '","' + person_phone + '","' + person_address + '"'
+		data += ',"' + person_name + '","' + person_phone_fax[0] + '","' + person_phone_fax[1] + '","' + person_address + '"'
 
 		# LEGISLATIVE INFORMATION
 		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detail_soup, '')
@@ -194,11 +192,58 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 
 		driver.execute_script("window.history.go(-1)")
 
-		if (headerBool):
-			fileName.write(headers + 'Round,Step' + '\n')
-			headerBool = False
+		if (round_num == 1 and step_num == 1) or (round_num == 2 and step_num == 1):
+			driver.get(url)
+			link = driver.find_element_by_id("GotoSearch")
+			link.click()
+			mySelect = Select(driver.find_element_by_id("ContentPlaceHolder1_RfpDDL"))
+			if round_num == 1 and step_num == 1:
+				my = mySelect.select_by_value('429')
+			else:
+				my = mySelect.select_by_value('629')
+			wait = WebDriverWait(driver, 300)
+			search = driver.find_element_by_id("ContentPlaceHolder1_PublicSearchBtn")
+			search.click()
 
-		fileName.write(data + str(round_num) + ',' + str(step_num) + '\n')
+			new_html_doc = driver.page_source
+			new_page_soup = BeautifulSoup(new_html_doc, 'html.parser')
+			new_table = new_page_soup.find(id="ContentPlaceHolder1_PublicProposalSearchGV")
+
+			# grab each row of data for pins' descriptions
+			new_containers = new_table.findAll('tr')[1:]
+
+			calledBack = False
+			for new_container in new_containers:
+				new_description = new_container.findAll('td')[1:]
+				new_applicant = new_description[2].text.strip()
+				if new_applicant == applicant_title:
+					print(proposal)
+					new_pin = new_container.a.text
+					if (headerBool):
+						fileName.write(headers + 'Round,Step,Called Back?,Step 2 Pin #' + '\n')
+						headerBool = False
+					fileName.write(data + str(round_num) + ',' + str(step_num) + ',Yes,' + new_pin + '\n')
+					calledBack = True
+			if (calledBack != True):
+				if (headerBool):
+					fileName.write(headers + 'Round,Step,Called Back?,Step 2 Pin #' + '\n')
+					headerBool = False
+				fileName.write(data + str(round_num) + ',' + str(step_num) + ',No,' + '\n')
+
+			driver.get(url)
+			link = driver.find_element_by_id("GotoSearch")
+			link.click()
+			mySelect = Select(driver.find_element_by_id("ContentPlaceHolder1_RfpDDL"))
+			my = mySelect.select_by_value(page)
+			wait = WebDriverWait(driver, 300)
+			search = driver.find_element_by_id("ContentPlaceHolder1_PublicSearchBtn")
+			search.click()
+		else:
+			if (headerBool):
+				fileName.write(headers + 'Round,Step' + '\n')
+				headerBool = False
+
+			fileName.write(data + str(round_num) + ',' + str(step_num) + '\n')
 
 driver = webdriver.Firefox()
 r1 = open('pin_descriptions_r1.csv', 'w')
@@ -208,19 +253,19 @@ r2s1 = open('pin_descriptions_r2s1.csv', 'w')
 r2s2 = open('pin_descriptions_r2s2.csv', 'w')
 
 # Round 1
-pageScrape('310', driver, r1, 1, '')
+# pageScrape('310', driver, r1, 1, '')
 
 # Round 1, Step 1
-pageScrape('330', driver, r1s1, 1, 1)
+# pageScrape('330', driver, r1s1, 1, 1)
 
 # Round 1, Step 2
-pageScrape('429', driver, r1s2, 1, 2)
+# pageScrape('429', driver, r1s2, 1, 2)
 
 # Round 2, Step 1
 pageScrape('509', driver, r2s1, 2, 1)
 
 # Round 2, Step 2
-pageScrape('629', driver, r2s2, 2, 2)
+# pageScrape('629', driver, r2s2, 2, 2)
 
 r1.close()
 r1s1.close()

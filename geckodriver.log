@@ -2389,3 +2389,762 @@ JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, l
 JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
 JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
 JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+1531291088962	geckodriver	INFO	geckodriver 0.21.0
+1531291088972	geckodriver	INFO	Listening on 127.0.0.1:60085
+1531291089065	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.IQ5SVUU8E7vV"
+2018-07-10 23:38:11.109 plugin-container[14574:1661042] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x733f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-07-10 23:38:12.160 plugin-container[14575:1661108] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x833f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531291092350	Marionette	INFO	Listening on port 60090
+1531291092431	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1082437605, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1082437605, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1082437605 line 1 > eval, line 1: unreachable code after return statement
+1531291222449	geckodriver	INFO	geckodriver 0.21.0
+1531291222456	geckodriver	INFO	Listening on 127.0.0.1:60510
+1531291223476	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.jyH9YxOkUnKb"
+2018-07-10 23:40:24.941 plugin-container[14600:1664524] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8807, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531291225375	Marionette	INFO	Listening on port 60517
+1531291225418	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-10 23:40:26.023 plugin-container[14601:1664612] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x833f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=436484569, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=436484569 line 1 > eval, line 1: unreachable code after return statement
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1531291598271	geckodriver	INFO	geckodriver 0.21.0
+1531291598278	geckodriver	INFO	Listening on 127.0.0.1:60801
+1531291598291	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.33PUTx3PUoLH"
+2018-07-10 23:46:39.780 plugin-container[14637:1670950] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x843f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531291600248	Marionette	INFO	Listening on port 60806
+1531291600338	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-10 23:46:40.825 plugin-container[14638:1671033] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x743f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=152728403, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=152728403, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=152728403 line 1 > eval, line 1: unreachable code after return statement
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 14637, Chrome_ChildThread] WARNING: pipe error: Broken pipe: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 709
+1531291670428	geckodriver	INFO	geckodriver 0.21.0
+1531291670436	geckodriver	INFO	Listening on 127.0.0.1:60897
+1531291671461	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.eY0cwB5UVWx3"
+2018-07-10 23:47:52.810 plugin-container[14667:1673205] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x863f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531291673181	Marionette	INFO	Listening on port 60904
+1531291673210	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-10 23:47:53.761 plugin-container[14668:1673292] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9043, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1336020345, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1336020345, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1336020345 line 1 > eval, line 1: unreachable code after return statement
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1531291831456	geckodriver	INFO	geckodriver 0.21.0
+1531291831465	geckodriver	INFO	Listening on 127.0.0.1:60996
+1531291831479	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.VwkvqviXYnqC"
+2018-07-10 23:50:32.766 plugin-container[14688:1676697] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x840b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531291833234	Marionette	INFO	Listening on port 61001
+1531291833350	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-10 23:50:33.728 plugin-container[14689:1676780] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8c3f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1633893539, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1633893539, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1633893539 line 1 > eval, line 1: unreachable code after return statement
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1531291857495	geckodriver	INFO	geckodriver 0.21.0
+1531291857505	geckodriver	INFO	Listening on 127.0.0.1:61048
+1531291857520	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.CBhW9WwBBHej"
+2018-07-10 23:50:58.793 plugin-container[14701:1677957] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7743, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531291859143	Marionette	INFO	Listening on port 61053
+1531291859169	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=918521576, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=918521576, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=918521576 line 1 > eval, line 1: unreachable code after return statement
+2018-07-10 23:50:59.915 plugin-container[14702:1678039] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7407, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+1531295946417	geckodriver	INFO	geckodriver 0.21.0
+1531295946424	geckodriver	INFO	Listening on 127.0.0.1:62751
+1531295947435	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.8LPDkJgPQZji"
+2018-07-11 00:59:08.803 plugin-container[17133:1725113] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7743, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531295949163	Marionette	INFO	Listening on port 62758
+1531295949184	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-11 00:59:09.795 plugin-container[17134:1725212] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7343, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=2091721715, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=2091721715, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=2091721715 line 1 > eval, line 1: unreachable code after return statement
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1531295964472	geckodriver	INFO	geckodriver 0.21.0
+1531295964484	geckodriver	INFO	Listening on 127.0.0.1:62824
+1531295964502	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.n8D8z6B9IkLO"
+2018-07-11 00:59:25.920 plugin-container[17140:1726085] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x753f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531295966394	Marionette	INFO	Listening on port 62829
+1531295966454	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=33071298, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=33071298, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=33071298 line 1 > eval, line 1: unreachable code after return statement
+2018-07-11 00:59:27.183 plugin-container[17141:1726217] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x753f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1531295990180	geckodriver	INFO	geckodriver 0.21.0
+1531295990190	geckodriver	INFO	Listening on 127.0.0.1:62885
+1531295990203	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.gLdPPDA13ppE"
+2018-07-11 00:59:51.386 plugin-container[17147:1726806] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8a3f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531295991775	Marionette	INFO	Listening on port 62890
+1531295991853	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-11 00:59:52.355 plugin-container[17148:1726884] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x893f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1142528880, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1142528880, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1142528880 line 1 > eval, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+1531296039783	geckodriver	INFO	geckodriver 0.21.0
+1531296039791	geckodriver	INFO	Listening on 127.0.0.1:62937
+1531296040805	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.QnzWLEx3trjr"
+2018-07-11 01:00:42.051 plugin-container[17158:1727873] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8807, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531296042413	Marionette	INFO	Listening on port 62944
+1531296042440	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-11 01:00:43.229 plugin-container[17159:1727959] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x733f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1464559633, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+1531296126203	geckodriver	INFO	geckodriver 0.21.0
+1531296126214	geckodriver	INFO	Listening on 127.0.0.1:63031
+1531296126226	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.3FeqdNChHvFy"
+2018-07-11 01:02:07.468 plugin-container[17168:1729588] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8543, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531296127912	Marionette	INFO	Listening on port 63036
+1531296127959	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=276238305, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=276238305, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=276238305 line 1 > eval, line 1: unreachable code after return statement
+2018-07-11 01:02:08.693 plugin-container[17169:1729710] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8447, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1531296161260	geckodriver	INFO	geckodriver 0.21.0
+1531296161269	geckodriver	INFO	Listening on 127.0.0.1:63095
+1531296162285	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.mQeGY8FjqUUJ"
+2018-07-11 01:02:43.484 plugin-container[17177:1730534] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x893f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531296163830	Marionette	INFO	Listening on port 63102
+1531296163913	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-11 01:02:44.439 plugin-container[17178:1730615] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x6d07, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1052980120, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1052980120, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1052980120 line 1 > eval, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+1531296440112	geckodriver	INFO	geckodriver 0.21.0
+1531296440120	geckodriver	INFO	Listening on 127.0.0.1:63260
+1531296441134	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.leTgZnXg7Vqd"
+2018-07-11 01:07:22.414 plugin-container[17238:1738012] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x873f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531296442816	Marionette	INFO	Listening on port 63267
+1531296442868	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-11 01:07:23.375 plugin-container[17239:1738123] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7a43, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1868551068, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1868551068, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1868551068 line 1 > eval, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+1531296628424	geckodriver	INFO	geckodriver 0.21.0
+1531296628432	geckodriver	INFO	Listening on 127.0.0.1:63365
+1531296629466	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.dW4qybn6Pc6e"
+2018-07-11 01:10:30.712 plugin-container[17263:1741463] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7803, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531296631095	Marionette	INFO	Listening on port 63372
+1531296631100	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-11 01:10:31.658 plugin-container[17264:1741545] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8403, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1055846259, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+[GFX1]: [Tiling:Client] Failed to allocate a TextureClient
+1531296857322	geckodriver	INFO	geckodriver 0.21.0
+1531296857328	geckodriver	INFO	Listening on 127.0.0.1:63513
+1531296858342	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.4xUzJDoeVYff"
+2018-07-11 01:14:19.649 plugin-container[17386:1745795] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7b03, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531296860045	Marionette	INFO	Listening on port 63520
+1531296860090	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-11 01:14:20.573 plugin-container[17387:1745879] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x6b43, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1457037705, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+1531296987965	geckodriver	INFO	geckodriver 0.21.0
+1531296987973	geckodriver	INFO	Listening on 127.0.0.1:63607
+1531296989008	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.x45GkPau0igE"
+2018-07-11 01:16:30.392 plugin-container[17410:1748229] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8537, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531296990765	Marionette	INFO	Listening on port 63614
+1531296990887	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-11 01:16:31.403 plugin-container[17411:1748312] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8803, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=728089732, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=728089732, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=728089732 line 1 > eval, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+1531297086809	geckodriver	INFO	geckodriver 0.21.0
+1531297086819	geckodriver	INFO	Listening on 127.0.0.1:63692
+1531297087861	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.vvqdnlbscjld"
+2018-07-11 01:18:09.180 plugin-container[17420:1750288] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7443, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531297089683	Marionette	INFO	Listening on port 63699
+1531297089701	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-11 01:18:10.266 plugin-container[17421:1750369] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9043, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=486160951, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=486160951, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=486160951 line 1 > eval, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1531297190478	geckodriver	INFO	geckodriver 0.21.0
+1531297190486	geckodriver	INFO	Listening on 127.0.0.1:63780
+1531297191516	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.r3ijAn03GdbY"
+2018-07-11 01:19:52.803 plugin-container[17444:1752864] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7603, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531297193159	Marionette	INFO	Listening on port 63787
+1531297193254	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-11 01:19:53.778 plugin-container[17445:1752962] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x753f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=82837884, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1531297255310	geckodriver	INFO	geckodriver 0.21.0
+1531297255319	geckodriver	INFO	Listening on 127.0.0.1:63833
+1531297256344	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.IsqnmYvtABsW"
+2018-07-11 01:20:57.682 plugin-container[17453:1754299] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x863f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531297258048	Marionette	INFO	Listening on port 63840
+1531297258089	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-11 01:20:58.613 plugin-container[17454:1754398] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x863f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=78857028, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=78857028, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=78857028 line 1 > eval, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1531297271428	geckodriver	INFO	geckodriver 0.21.0
+1531297271445	geckodriver	INFO	Listening on 127.0.0.1:63904
+1531297271457	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.y9gA8OS4ob6V"
+2018-07-11 01:21:12.722 plugin-container[17460:1754760] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8c3f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531297273077	Marionette	INFO	Listening on port 63909
+1531297273090	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-11 01:21:13.647 plugin-container[17461:1754867] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x723f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=907602630, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=907602630, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=907602630 line 1 > eval, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+1531297585627	geckodriver	INFO	geckodriver 0.21.0
+1531297585634	geckodriver	INFO	Listening on 127.0.0.1:64068
+1531297586607	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.HT6dhBhV7BuC"
+2018-07-11 01:26:28.150 plugin-container[17488:1759653] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8c3f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531297588602	Marionette	INFO	Listening on port 64075
+1531297588659	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-11 01:26:29.098 plugin-container[17489:1759792] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8c3f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=2112902205, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=2112902205, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=2112902205 line 1 > eval, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+1531298006269	geckodriver	INFO	geckodriver 0.21.0
+1531298006276	geckodriver	INFO	Listening on 127.0.0.1:64395
+1531298007273	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.f93vw9pbUV2A"
+2018-07-11 01:33:28.658 plugin-container[17547:1768405] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x743f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531298009048	Marionette	INFO	Listening on port 64402
+1531298009105	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-11 01:33:29.593 plugin-container[17548:1768494] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7a0b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=390792448, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=390792448, line 1: unreachable code after return statement
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=390792448 line 1 > eval, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1531298068976	geckodriver	INFO	geckodriver 0.21.0
+1531298068982	geckodriver	INFO	Listening on 127.0.0.1:64469
+1531298069003	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/0n/jnh0ptvd7wg6wx9m5qskh_gm0000gn/T/rust_mozprofile.4qKjnfxbuGeF"
+2018-07-11 01:34:30.374 plugin-container[17557:1770145] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x8b47, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1531298070845	Marionette	INFO	Listening on port 64474
+1531298070953	Marionette	WARN	TLS certificate errors will be ignored for this session
+2018-07-11 01:34:31.294 plugin-container[17558:1770236] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x893f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript warning: http://faast.waterboards.ca.gov/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=307634677, line 1: unreachable code after return statement
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
+JavaScript error: http://www.waterboards.ca.gov/javascript/hide_functions.txt, line 1: SyntaxError: expected expression, got '<'
