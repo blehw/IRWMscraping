@@ -6,8 +6,9 @@ import time
 import re
 
 # TODO:
-# 1. Add link for call back and new pin
-# 2. Latitude/longitude issue and email/fax
+# 1. Scrape questionnaire (insert into end of pageScrape function)
+# 2. Distinguish phone/email etc...
+# 3. Latitude/longitude issue?
 
 def scrapeHeaders(tableName, soup, title):
 	table = soup.find(id=tableName)
@@ -84,7 +85,7 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 		data = pin + ',' + agreement + ',"' + proposal + '","' + applicant + '","' + county + '","' + watershed + '","' + rwqcb + '","' + reqfunds + '","' + status + '"'
 
 		# click through to form
-		time.sleep(0.75)
+		time.sleep(0.5)
 		driver.find_element_by_link_text(pin).click()
 		detail_doc = driver.page_source
 		detail_soup = BeautifulSoup(detail_doc, 'html.parser')
@@ -102,14 +103,14 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 				if (headerBool):
 					headers += label + ','
 				#need to fix
-				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace('"',"'") + '"'
+				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace(',','|') + '"'
 			else:
 				oDescription = overview_container.find("td", {"class": "left_column"})
 				if (oDescription != None):
 					label = oDescription.text.strip()[:-1]
 					if (headerBool):
 						headers += label + ','
-					data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace('"',"'") + '"'
+					data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace(',','|') + '"'
 
 		
 		# FUNDING
@@ -164,66 +165,44 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 		data += scrapeData('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup, newHeaders.count(','))
 
 		# Questionnaire
-		numQuestions = 0
 		questionnaire_data = ''
 		questionnaire_headers = detail_soup.findAll(id=re.compile('^ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_QText_'))
 		for th in questionnaire_headers:
 			if (headerBool):
 				headers += '"' + th.text.strip() + '",'
-				numQuestions += 1
-		currQuestion = 0
-		data += ','
 		questionnaire_data = detail_soup.findAll('span', {'id' : re.compile('^ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_')})
-		newData = '"'
 		for d in questionnaire_data:
-			newD = str(d.get('id')).replace('ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_', '')
-			if 'Ans' in str(newD) and str(newD).endswith(str(currQuestion + 1)):
-				currQuestion += 1
-				if (newData != '"'):
-					data += newData[:-1] + '",'
-				else:
-					data += ','
-				newData = '"'
-			if 'Ans' in str(newD) and str(newD).endswith(str(currQuestion)):
+			newD = str(d).replace('ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_', '')
+			if 'Ans' in str(newD):
 				if (d.text.strip() != ''):
-					newData += d.text.strip().replace('"',"'") + '/'	
-		if (newData != '"'):
-			data += newData[:-1] + '",'
-		else:
-			data += ','
+					data += ',"' + d.text.strip() + '"'
 
 		driver.execute_script("window.history.go(-1)")
 
 		if (headerBool):
-			fileName.write(headers + 'Round,Step' + '\n')
+			f.write(headers[:-1] + ',Round,Step' + '\n')
 			headerBool = False
 
-		fileName.write(data + str(round_num) + ',' + str(step_num) + '\n')
+		f.write(data + ',' + str(round_num) + ',' + str(step_num) + '\n')
 
 driver = webdriver.Firefox()
-r1 = open('pin_descriptions_r1.csv', 'w')
-r1s1 = open('pin_descriptions_r1s1.csv', 'w')
-r1s2 = open('pin_descriptions_r1s2.csv', 'w')
-r2s1 = open('pin_descriptions_r2s1.csv', 'w')
-r2s2 = open('pin_descriptions_r2s2.csv', 'w')
+fname = 'pin_descriptions.csv'
+f = open(fname, 'w')
 
 # Round 1
-pageScrape('310', driver, r1, 1, '')
+pageScrape('310', driver, f, 1, '')
 
 # Round 1, Step 1
-pageScrape('330', driver, r1s1, 1, 1)
+pageScrape('330', driver, f, 1, 1)
 
 # Round 1, Step 2
-pageScrape('429', driver, r1s2, 1, 2)
+pageScrape('429', driver, f, 1, 2)
 
 # Round 2, Step 1
-pageScrape('509', driver, r2s1, 2, 1)
+pageScrape('509', driver, f, 2, 1)
 
 # Round 2, Step 2
-pageScrape('629', driver, r2s2, 2, 2)
+pageScrape('629', driver, f, 2, 2)
 
-r1.close()
-r1s1.close()
-r1s2.close()
-r2s1.close()
-r2s2.close()
+
+f.close()
