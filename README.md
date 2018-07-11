@@ -14,3 +14,9 @@ $brew tap homebrew/cask
 
 $brew cask install chromedriver
 ```
+
+then, run:
+
+```
+$python parser.py
+```
