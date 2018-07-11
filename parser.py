@@ -189,6 +189,11 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 		else:
 			data += ','
 
+		if (round_num == 1 and step_num == 2):
+			step1_pins = re.findall(r'\d+', 'hello 42 I\'m a 32 string 30')
+
+		'''	
+
 		if (round_num == 1 and step_num == 1) or (round_num == 2 and step_num == 1):
 			driver.get(url)
 			link = driver.find_element_by_id("GotoSearch")
@@ -239,6 +244,8 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 
 			'''
 
+			'''
+
 			new_html_doc = driver.page_source
 			new_page_soup = BeautifulSoup(new_html_doc, 'html.parser')
 			new_table = new_page_soup.find(id="ContentPlaceHolder1_PublicProposalSearchGV")
@@ -283,20 +290,20 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 			driver.execute_script("window.history.go(-1)")
 
 driver = webdriver.Firefox()
-r1 = open('pin_descriptions_r1.csv', 'w')
-r1s1 = open('pin_descriptions_r1s1.csv', 'w')
-r1s2 = open('pin_descriptions_r1s2.csv', 'w')
+#r1 = open('pin_descriptions_r1.csv', 'w')
+#r1s1 = open('pin_descriptions_r1s1.csv', 'w')
+#r1s2 = open('pin_descriptions_r1s2.csv', 'w')
 r2s1 = open('pin_descriptions_r2s1.csv', 'w')
 r2s2 = open('pin_descriptions_r2s2.csv', 'w')
 
 # Round 1
-pageScrape('310', driver, r1, 1, '')
+#pageScrape('310', driver, r1, 1, '')
 
 # Round 1, Step 1
-pageScrape('330', driver, r1s1, 1, 1)
+#pageScrape('330', driver, r1s1, 1, 1)
 
 # Round 1, Step 2
-pageScrape('429', driver, r1s2, 1, 2)
+#pageScrape('429', driver, r1s2, 1, 2)
 
 # Round 2, Step 1
 pageScrape('509', driver, r2s1, 2, 1)
@@ -304,8 +311,8 @@ pageScrape('509', driver, r2s1, 2, 1)
 # Round 2, Step 2
 pageScrape('629', driver, r2s2, 2, 2)
 
-r1.close()
-r1s1.close()
-r1s2.close()
+#r1.close()
+#r1s1.close()
+#r1s2.close()
 r2s1.close()
 r2s2.close()
