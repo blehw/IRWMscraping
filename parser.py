@@ -183,136 +183,77 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 				newData = '"'
 			if 'Ans' in str(newD) and str(newD).endswith(str(currQuestion)):
 				if (d.text.strip() != ''):
-					newData += d.text.strip().replace('"',"'") + '/'	
+					newData += d.text.strip().replace('"',"'") + '/'
+					if (round_num == 1 and step_num == 2) or (round_num == 2 and step_num == 2):
+						prevPins = 0
+						if (round_num == 1 and step_num == 2):
+							prevPins = 3
+						else:
+							prevPins = 4
+						if (currQuestion == prevPins) and ('Descriptive' in str(newD)):
+							step1_pins = re.findall(r'\d+', d.text.strip())
+							for s in step1_pins:
+								if (len(s) >= 4):
+									if (round_num == 1 and step_num == 2):
+										r1callback[s] = pin
+									else:
+										r2callback[s] = pin
 		if (newData != '"'):
 			data += newData[:-1] + '",'
 		else:
 			data += ','
 
-		if (round_num == 1 and step_num == 2):
-			step1_pins = re.findall(r'\d+', 'hello 42 I\'m a 32 string 30')
-
-		'''	
-
 		if (round_num == 1 and step_num == 1) or (round_num == 2 and step_num == 1):
-			driver.get(url)
-			link = driver.find_element_by_id("GotoSearch")
-			link.click()
-			mySelect = Select(driver.find_element_by_id("ContentPlaceHolder1_RfpDDL"))
-			if round_num == 1 and step_num == 1:
-				my = mySelect.select_by_value('429')
+			callback_pins = {}
+			if (round_num == 1 and step_num == 1):
+				callback_pins = r1callback
 			else:
-				my = mySelect.select_by_value('629')
-			wait = WebDriverWait(driver, 300)
-			search = driver.find_element_by_id("ContentPlaceHolder1_PublicSearchBtn")
-			search.click()
-
-			new_html_doc = driver.page_source
-			new_page_soup = BeautifulSoup(new_html_doc, 'html.parser')
-			new_table = new_page_soup.find(id="ContentPlaceHolder1_PublicProposalSearchGV")
-
-			# grab each row of data for pins' descriptions
-			new_containers = new_table.findAll('tr')[1:]
-
-			calledBack = False
-			for new_container in new_containers:
-				if (calledBack == False):
-					new_pin = new_container.a.text
-
-					# click through to form
-					time.sleep(0.75)
-					driver.find_element_by_link_text(new_pin).click()
-					new_detail_doc = driver.page_source
-					new_detail_soup = BeautifulSoup(new_detail_doc, 'html.parser')
-
-					new_questionnaire_data = new_detail_soup.findAll('span', {'id' : re.compile('^ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_')})
-					for new_d in new_questionnaire_data:
-						if pin in new_d.text:
-							print(proposal)
-							if (headerBool):
-								fileName.write(headers + 'Round,Step,Called Back?,Step 2 Pin #' + '\n')
-								headerBool = False
-							fileName.write(data + str(round_num) + ',' + str(step_num) + ',Yes,' + new_pin + '\n')
-							calledBack = True
-
-					driver.execute_script("window.history.go(-1)")
-			if (calledBack != True):
+				callback_pins = r2callback
+			if pin in callback_pins:
+				if (headerBool):
+					fileName.write(headers + 'Round,Step,Called Back?,Step 2 Pin #' + '\n')
+					headerBool = False
+				fileName.write(data + str(round_num) + ',' + str(step_num) + ',Yes,' + callback_pins.get(pin) + '\n')
+			else:
 				if (headerBool):
 					fileName.write(headers + 'Round,Step,Called Back?,Step 2 Pin #' + '\n')
 					headerBool = False
 				fileName.write(data + str(round_num) + ',' + str(step_num) + ',No,' + '\n')
-
-			'''
-
-			'''
-
-			new_html_doc = driver.page_source
-			new_page_soup = BeautifulSoup(new_html_doc, 'html.parser')
-			new_table = new_page_soup.find(id="ContentPlaceHolder1_PublicProposalSearchGV")
-
-			# grab each row of data for pins' descriptions
-			new_containers = new_table.findAll('tr')[1:]
-
-			calledBack = False
-			for new_container in new_containers:
-				new_description = new_container.findAll('td')[1:]
-				new_applicant = new_description[2].text.strip()
-				if new_applicant == applicant_title:
-					print(proposal)
-					new_pin = new_container.a.text
-					if (headerBool):
-						fileName.write(headers + 'Round,Step,Called Back?,Step 2 Pin #' + '\n')
-						headerBool = False
-					fileName.write(data + str(round_num) + ',' + str(step_num) + ',Yes,' + new_pin + '\n')
-					calledBack = True
-			if (calledBack != True):
-				if (headerBool):
-					fileName.write(headers + 'Round,Step,Called Back?,Step 2 Pin #' + '\n')
-					headerBool = False
-				fileName.write(data + str(round_num) + ',' + str(step_num) + ',No,' + '\n')
-			'''
-
-			driver.get(url)
-			link = driver.find_element_by_id("GotoSearch")
-			link.click()
-			mySelect = Select(driver.find_element_by_id("ContentPlaceHolder1_RfpDDL"))
-			my = mySelect.select_by_value(page)
-			wait = WebDriverWait(driver, 300)
-			search = driver.find_element_by_id("ContentPlaceHolder1_PublicSearchBtn")
-			search.click()
 		else:
 			if (headerBool):
 				fileName.write(headers + 'Round,Step' + '\n')
 				headerBool = False
-
 			fileName.write(data + str(round_num) + ',' + str(step_num) + '\n')
 
-			driver.execute_script("window.history.go(-1)")
+		driver.execute_script("window.history.go(-1)")
 
 driver = webdriver.Firefox()
-#r1 = open('pin_descriptions_r1.csv', 'w')
-#r1s1 = open('pin_descriptions_r1s1.csv', 'w')
-#r1s2 = open('pin_descriptions_r1s2.csv', 'w')
+r1 = open('pin_descriptions_r1.csv', 'w')
+r1s1 = open('pin_descriptions_r1s1.csv', 'w')
+r1s2 = open('pin_descriptions_r1s2.csv', 'w')
 r2s1 = open('pin_descriptions_r2s1.csv', 'w')
 r2s2 = open('pin_descriptions_r2s2.csv', 'w')
 
-# Round 1
-#pageScrape('310', driver, r1, 1, '')
+r1callback = {}
+r2callback = {}
 
-# Round 1, Step 1
-#pageScrape('330', driver, r1s1, 1, 1)
+# Round 1
+pageScrape('310', driver, r1, 1, '')
 
 # Round 1, Step 2
-#pageScrape('429', driver, r1s2, 1, 2)
+pageScrape('429', driver, r1s2, 1, 2)
 
-# Round 2, Step 1
-pageScrape('509', driver, r2s1, 2, 1)
+# Round 1, Step 1
+pageScrape('330', driver, r1s1, 1, 1)
 
 # Round 2, Step 2
 pageScrape('629', driver, r2s2, 2, 2)
 
-#r1.close()
-#r1s1.close()
-#r1s2.close()
+# Round 2, Step 1
+pageScrape('509', driver, r2s1, 2, 1)
+
+r1.close()
+r1s1.close()
+r1s2.close()
 r2s1.close()
 r2s2.close()
