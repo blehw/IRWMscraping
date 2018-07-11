@@ -85,12 +85,10 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 		data = pin + ',' + agreement + ',"' + proposal + '","' + applicant_title + '","' + county + '","' + watershed + '","' + rwqcb + '","' + reqfunds + '","' + status + '"'
 
 		# click through to form
-		time.sleep(0.5)
+		time.sleep(0.75)
 		driver.find_element_by_link_text(pin).click()
 		detail_doc = driver.page_source
 		detail_soup = BeautifulSoup(detail_doc, 'html.parser')
-		#print(detail_soup.prettify())
-
 		
 		# APPLICATION OVERVIEW (second page)
 		overview = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_ProposalGeneralInfoFV")
@@ -102,7 +100,6 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 				label = oDescription.text.strip()[:-1]
 				if (headerBool):
 					headers += label + ','
-<<<<<<< HEAD
 				if 'Latitude' in label:
 					if (headerBool):
 						headers += 'Longitude,'
@@ -110,18 +107,6 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 					data += ',"' + coordinates[0].strip() + '","' + coordinates[1].strip() + '"'
 				else:
 					data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace('"',"'") + '"'
-=======
-				#need to fix
-				data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace(',','|') + '"'
-			else:
-				oDescription = overview_container.find("td", {"class": "left_column"})
-				if (oDescription != None):
-					label = oDescription.text.strip()[:-1]
-					if (headerBool):
-						headers += label + ','
-					data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace(',','|') + '"'
-
->>>>>>> 8fc296204330735d7b9a5bb63bf1baf64d56d94c
 		
 		# FUNDING
 		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detail_soup, '')
@@ -176,21 +161,34 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 		data += scrapeData('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup, newHeaders.count(','))
 
 		# Questionnaire
+		numQuestions = 0
 		questionnaire_data = ''
 		questionnaire_headers = detail_soup.findAll(id=re.compile('^ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_QText_'))
 		for th in questionnaire_headers:
 			if (headerBool):
 				headers += '"' + th.text.strip() + '",'
+				numQuestions += 1
+		currQuestion = 0
+		data += ','
 		questionnaire_data = detail_soup.findAll('span', {'id' : re.compile('^ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_')})
+		newData = '"'
 		for d in questionnaire_data:
-			newD = str(d).replace('ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_', '')
-			if 'Ans' in str(newD):
+			newD = str(d.get('id')).replace('ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_', '')
+			if 'Ans' in str(newD) and str(newD).endswith(str(currQuestion + 1)):
+				currQuestion += 1
+				if (newData != '"'):
+					data += newData[:-1] + '",'
+				else:
+					data += ','
+				newData = '"'
+			if 'Ans' in str(newD) and str(newD).endswith(str(currQuestion)):
 				if (d.text.strip() != ''):
-					data += ',"' + d.text.strip() + '"'
+					newData += d.text.strip().replace('"',"'") + '/'	
+		if (newData != '"'):
+			data += newData[:-1] + '",'
+		else:
+			data += ','
 
-		driver.execute_script("window.history.go(-1)")
-
-<<<<<<< HEAD
 		if (round_num == 1 and step_num == 1) or (round_num == 2 and step_num == 1):
 			driver.get(url)
 			link = driver.find_element_by_id("GotoSearch")
@@ -203,6 +201,43 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 			wait = WebDriverWait(driver, 300)
 			search = driver.find_element_by_id("ContentPlaceHolder1_PublicSearchBtn")
 			search.click()
+
+			new_html_doc = driver.page_source
+			new_page_soup = BeautifulSoup(new_html_doc, 'html.parser')
+			new_table = new_page_soup.find(id="ContentPlaceHolder1_PublicProposalSearchGV")
+
+			# grab each row of data for pins' descriptions
+			new_containers = new_table.findAll('tr')[1:]
+
+			calledBack = False
+			for new_container in new_containers:
+				if (calledBack == False):
+					new_pin = new_container.a.text
+
+					# click through to form
+					time.sleep(0.75)
+					driver.find_element_by_link_text(new_pin).click()
+					new_detail_doc = driver.page_source
+					new_detail_soup = BeautifulSoup(new_detail_doc, 'html.parser')
+
+					new_questionnaire_data = new_detail_soup.findAll('span', {'id' : re.compile('^ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_')})
+					for new_d in new_questionnaire_data:
+						if pin in new_d.text:
+							print(proposal)
+							if (headerBool):
+								fileName.write(headers + 'Round,Step,Called Back?,Step 2 Pin #' + '\n')
+								headerBool = False
+							fileName.write(data + str(round_num) + ',' + str(step_num) + ',Yes,' + new_pin + '\n')
+							calledBack = True
+
+					driver.execute_script("window.history.go(-1)")
+			if (calledBack != True):
+				if (headerBool):
+					fileName.write(headers + 'Round,Step,Called Back?,Step 2 Pin #' + '\n')
+					headerBool = False
+				fileName.write(data + str(round_num) + ',' + str(step_num) + ',No,' + '\n')
+
+			'''
 
 			new_html_doc = driver.page_source
 			new_page_soup = BeautifulSoup(new_html_doc, 'html.parser')
@@ -228,6 +263,7 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 					fileName.write(headers + 'Round,Step,Called Back?,Step 2 Pin #' + '\n')
 					headerBool = False
 				fileName.write(data + str(round_num) + ',' + str(step_num) + ',No,' + '\n')
+			'''
 
 			driver.get(url)
 			link = driver.find_element_by_id("GotoSearch")
@@ -243,46 +279,33 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 				headerBool = False
 
 			fileName.write(data + str(round_num) + ',' + str(step_num) + '\n')
-=======
-		if (headerBool):
-			f.write(headers[:-1] + ',Round,Step' + '\n')
-			headerBool = False
 
-		f.write(data + ',' + str(round_num) + ',' + str(step_num) + '\n')
->>>>>>> 8fc296204330735d7b9a5bb63bf1baf64d56d94c
+			driver.execute_script("window.history.go(-1)")
 
 driver = webdriver.Firefox()
-fname = 'pin_descriptions.csv'
-f = open(fname, 'w')
+r1 = open('pin_descriptions_r1.csv', 'w')
+r1s1 = open('pin_descriptions_r1s1.csv', 'w')
+r1s2 = open('pin_descriptions_r1s2.csv', 'w')
+r2s1 = open('pin_descriptions_r2s1.csv', 'w')
+r2s2 = open('pin_descriptions_r2s2.csv', 'w')
 
 # Round 1
-<<<<<<< HEAD
-# pageScrape('310', driver, r1, 1, '')
+pageScrape('310', driver, r1, 1, '')
 
 # Round 1, Step 1
-# pageScrape('330', driver, r1s1, 1, 1)
+pageScrape('330', driver, r1s1, 1, 1)
 
 # Round 1, Step 2
-# pageScrape('429', driver, r1s2, 1, 2)
-=======
-pageScrape('310', driver, f, 1, '')
-
-# Round 1, Step 1
-pageScrape('330', driver, f, 1, 1)
-
-# Round 1, Step 2
-pageScrape('429', driver, f, 1, 2)
->>>>>>> 8fc296204330735d7b9a5bb63bf1baf64d56d94c
+pageScrape('429', driver, r1s2, 1, 2)
 
 # Round 2, Step 1
-pageScrape('509', driver, f, 2, 1)
+pageScrape('509', driver, r2s1, 2, 1)
 
 # Round 2, Step 2
-<<<<<<< HEAD
-# pageScrape('629', driver, r2s2, 2, 2)
-=======
-pageScrape('629', driver, f, 2, 2)
+pageScrape('629', driver, r2s2, 2, 2)
 
->>>>>>> 8fc296204330735d7b9a5bb63bf1baf64d56d94c
-
-f.close()
+r1.close()
+r1s1.close()
+r1s2.close()
+r2s1.close()
+r2s2.close()
