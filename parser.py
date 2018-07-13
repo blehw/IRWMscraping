@@ -5,10 +5,17 @@ from selenium.webdriver.support.ui import Select
 import time
 import re
 
-# TODO:
-# 1. Scrape questionnaire (insert into end of pageScrape function)
-# 2. Distinguish phone/email etc...
-# 3. Latitude/longitude issue?
+'''
+To use, the most recent version of Firefox and the following need to be installed:
+
+$pip install selenium
+$pip install beautifulsoup4
+$brew install geckodriver
+$brew tap homebrew/cask
+
+Then, run:
+$python parser.py
+'''
 
 def scrapeHeaders(tableName, soup, title):
 	table = soup.find(id=tableName)
@@ -41,7 +48,7 @@ def scrapeData(tableName, soup, numFields):
 			dataStr += ','
 	return dataStr
 
-def pageScrape(page, driver, fileName, round_num, step_num):
+def pageScrape(page, driver, fileName, roundNum, stepNum):
 	url = 'http://faast.waterboards.ca.gov/Public_Interface/PublicPropSearchMain.aspx'
 
 	# get to appropriate page
@@ -54,9 +61,9 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 	search = driver.find_element_by_id("ContentPlaceHolder1_PublicSearchBtn")
 	search.click()
 
-	html_doc = driver.page_source
-	page_soup = BeautifulSoup(html_doc, 'html.parser')
-	table = page_soup.find(id="ContentPlaceHolder1_PublicProposalSearchGV")
+	htmlDoc = driver.page_source
+	pageSoup = BeautifulSoup(htmlDoc, 'html.parser')
+	table = pageSoup.find(id="ContentPlaceHolder1_PublicProposalSearchGV")
 
 	# grab headers for data
 	labels = table.tbody.tr.findAll('th')
@@ -71,31 +78,31 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 
 	for container in containers:
 
-		# PIN DESCRIPTION (first page)
+		# pin description (first page)
 		pin = container.a.text
 		description = container.findAll('td')[1:]
 		agreement = description[0].text.strip()
 		proposal = description[1].text.strip()
-		applicant_title = description[2].text.strip()
+		applicantTitle = description[2].text.strip()
 		county = description[3].text.strip()
 		watershed = description[4].text.strip()
 		rwqcb = description[5].text.strip()
 		reqfunds = description[6].text.strip()
 		status = description[7].text.strip()
-		data = pin + ',' + agreement + ',"' + proposal + '","' + applicant_title + '","' + county + '","' + watershed + '","' + rwqcb + '","' + reqfunds + '","' + status + '"'
+		data = pin + ',' + agreement + ',"' + proposal + '","' + applicantTitle + '","' + county + '","' + watershed + '","' + rwqcb + '","' + reqfunds + '","' + status + '"'
 
 		# click through to form
 		time.sleep(0.75)
 		driver.find_element_by_link_text(pin).click()
-		detail_doc = driver.page_source
-		detail_soup = BeautifulSoup(detail_doc, 'html.parser')
+		detailDoc = driver.page_source
+		detailSoup = BeautifulSoup(detailDoc, 'html.parser')
 		
-		# APPLICATION OVERVIEW (second page)
-		overview = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_ProposalGeneralInfoFV")
-		overview_containers = overview.find('tr').findAll('tr') 
+		# application overview (second page)
+		overview = detailSoup.find(id="ContentPlaceHolder1_PropGeneralInfo_ProposalGeneralInfoFV")
+		overviewContainers = overview.find('tr').findAll('tr') 
 
-		for overview_container in overview_containers:
-			oDescription = overview_container.find("td", {"class": "left_column1"})
+		for overviewContainer in overviewContainers:
+			oDescription = overviewContainer.find("td", {"class": "left_column1"})
 			if (oDescription != None):
 				label = oDescription.text.strip()[:-1]
 				if (headerBool):
@@ -103,76 +110,75 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 				if 'Latitude' in label:
 					if (headerBool):
 						headers += 'Longitude,'
-					coordinates = overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace('"',"'").split('Longitude:')
+					coordinates = overviewContainer.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace('"',"'").split('Longitude:')
 					data += ',"' + coordinates[0].strip() + '","' + coordinates[1].strip() + '"'
 				else:
-					data += ',"' + overview_container.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace('"',"'") + '"'
+					data += ',"' + overviewContainer.find("td", {"class": "right_column"}).text.strip().replace('\n', '').replace('"',"'") + '"'
 		
-		# FUNDING
-		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detail_soup, '')
+		# funding
+		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detailSoup, '')
 		headers += newHeaders
-		data += scrapeData('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detail_soup, newHeaders.count(','))
+		data += scrapeData('ContentPlaceHolder1_PropGeneralInfo_FundProgramReadGV', detailSoup, newHeaders.count(','))
 
-		# MANAGEMENT
-		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV', detail_soup, 'Manager')
+		# management
+		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV', detailSoup, 'Manager')
 		headers += newHeaders
-		data += scrapeData('ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV', detail_soup, newHeaders.count(','))
+		data += scrapeData('ContentPlaceHolder1_PropGeneralInfo_ProjectMgmtDetailsGV', detailSoup, newHeaders.count(','))
 
-		# APPLICANT INFORMATION
-		applicant = detail_soup.find(id="ContentPlaceHolder1_PropGeneralInfo_AppOrganizationInfoFV")
-		applicant_labels = applicant.tbody.tr.td.findAll('div', {'class' : 'DivTablColumnleft'})
-		for th in applicant_labels:
+		# applicant information
+		applicant = detailSoup.find(id="ContentPlaceHolder1_PropGeneralInfo_AppOrganizationInfoFV")
+		applicantLabels = applicant.tbody.tr.td.findAll('div', {'class' : 'DivTablColumnleft'})
+		for th in applicantLabels:
 			if (headerBool):
 				headers += 'Applicant ' + th.text.strip()[:-1] + ','
-		applicant_container = applicant.findAll('div', {'class': 'DivTablColumnright'})
-		applicant_name = applicant_container[0].text.strip()
-		applicant_division = applicant_container[1].text.strip()
-		applicant_address = applicant_container[2].text.strip()
-		data += ',"' + applicant_name + '","' + applicant_division + '","' + applicant_address + '"'
+		applicantContainer = applicant.findAll('div', {'class': 'DivTablColumnright'})
+		applicantName = applicantContainer[0].text.strip()
+		applicantDivision = applicantContainer[1].text.strip()
+		applicantAddress = applicantContainer[2].text.strip()
+		data += ',"' + applicantName + '","' + applicantDivision + '","' + applicantAddress + '"'
 
-		# PERSON SUBMITTING INFORMATION
-		person = detail_soup.find(id='ContentPlaceHolder1_PropGeneralInfo_SubmittingUserInfoFV')
-		person_labels = person.tbody.tr.td.findAll('div', {'class' : 'DivTablColumnleft'})
-		for th in person_labels:
+		# person submitting information
+		person = detailSoup.find(id='ContentPlaceHolder1_PropGeneralInfo_SubmittingUserInfoFV')
+		personLabels = person.tbody.tr.td.findAll('div', {'class' : 'DivTablColumnleft'})
+		for th in personLabels:
 			if (headerBool):
 				headers += th.text.strip()[:-1] + ','
 				if 'Submitter Phone' in th.text.strip()[:-1]:
 					headers += 'Submitter Fax,'
-		person_container = person.findAll('div', {'class': 'DivTablColumnright'})
-		person_name = person_container[0].text.strip()
-		person_phone_fax =  person_container[1].text.strip().split('Fax:')
-		person_address = person_container[2].text.strip()
-		data += ',"' + person_name + '","' + person_phone_fax[0] + '","' + person_phone_fax[1] + '","' + person_address + '"'
+		personContainer = person.findAll('div', {'class': 'DivTablColumnright'})
+		personName = personContainer[0].text.strip()
+		personPhoneFax =  personContainer[1].text.strip().split('Fax:')
+		personAddress = personContainer[2].text.strip()
+		data += ',"' + personName + '","' + personPhoneFax[0] + '","' + personPhoneFax[1] + '","' + personAddress + '"'
 
-		# LEGISLATIVE INFORMATION
-		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detail_soup, '')
+		# legislative information
+		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detailSoup, '')
 		headers += newHeaders
-		data += scrapeData('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detail_soup, newHeaders.count(','))
+		data += scrapeData('ContentPlaceHolder1_PropAddInfo_LegislativeInfoGV', detailSoup, newHeaders.count(','))
 
-		# CONTACTS
-		# need if statement
-		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropAddInfo_AgencyContactListGV', detail_soup, 'Contact')
+		# contacts
+		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropAddInfo_AgencyContactListGV', detailSoup, 'Contact')
 		headers += newHeaders
-		data += scrapeData('ContentPlaceHolder1_PropAddInfo_AgencyContactListGV', detail_soup, newHeaders.count(','))
+		data += scrapeData('ContentPlaceHolder1_PropAddInfo_AgencyContactListGV', detailSoup, newHeaders.count(','))
 
-		# COOPERATING ENTITIES
-		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup, 'Cooperating Entity')
+		# cooperating entities
+		newHeaders = scrapeHeaders('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detailSoup, 'Cooperating Entity')
 		headers += newHeaders
-		data += scrapeData('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detail_soup, newHeaders.count(','))
+		data += scrapeData('ContentPlaceHolder1_PropAddInfo_CoopEntityGV', detailSoup, newHeaders.count(','))
 
-		# Questionnaire
+		# questionnaire
 		numQuestions = 0
-		questionnaire_data = ''
-		questionnaire_headers = detail_soup.findAll(id=re.compile('^ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_QText_'))
-		for th in questionnaire_headers:
+		questionnaireData = ''
+		questionnaireHeaders = detailSoup.findAll(id=re.compile('^ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_QText_'))
+		for th in questionnaireHeaders:
 			if (headerBool):
 				headers += '"' + th.text.strip() + '",'
 				numQuestions += 1
 		currQuestion = 0
 		data += ','
-		questionnaire_data = detail_soup.findAll('span', {'id' : re.compile('^ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_')})
+		questionnaireData = detailSoup.findAll('span', {'id' : re.compile('^ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_')})
 		newData = '"'
-		for d in questionnaire_data:
+		for d in questionnaireData:
 			newD = str(d.get('id')).replace('ContentPlaceHolder1_PropAnswerSheet_QuestionsPreviewReadOnly_', '')
 			if 'Ans' in str(newD) and str(newD).endswith(str(currQuestion + 1)):
 				currQuestion += 1
@@ -184,17 +190,17 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 			if 'Ans' in str(newD) and str(newD).endswith(str(currQuestion)):
 				if (d.text.strip() != ''):
 					newData += d.text.strip().replace('"',"'") + '/'
-					if (round_num == 1 and step_num == 2) or (round_num == 2 and step_num == 2):
+					if (roundNum == 1 and stepNum == 2) or (roundNum == 2 and stepNum == 2):
 						prevPins = 0
-						if (round_num == 1 and step_num == 2):
+						if (roundNum == 1 and stepNum == 2):
 							prevPins = 3
 						else:
 							prevPins = 4
 						if (currQuestion == prevPins) and ('Descriptive' in str(newD)):
-							step1_pins = re.findall(r'\d+', d.text.strip())
-							for s in step1_pins:
+							step1Pins = re.findall(r'\d+', d.text.strip())
+							for s in step1Pins:
 								if (len(s) >= 4):
-									if (round_num == 1 and step_num == 2):
+									if (roundNum == 1 and stepNum == 2):
 										r1callback[s] = pin
 									else:
 										r2callback[s] = pin
@@ -203,27 +209,27 @@ def pageScrape(page, driver, fileName, round_num, step_num):
 		else:
 			data += ','
 
-		if (round_num == 1 and step_num == 1) or (round_num == 2 and step_num == 1):
-			callback_pins = {}
-			if (round_num == 1 and step_num == 1):
-				callback_pins = r1callback
+		if (roundNum == 1 and stepNum == 1) or (roundNum == 2 and stepNum == 1):
+			callbackPins = {}
+			if (roundNum == 1 and stepNum == 1):
+				callbackPins = r1callback
 			else:
-				callback_pins = r2callback
-			if pin in callback_pins:
+				callbackPins = r2callback
+			if pin in callbackPins:
 				if (headerBool):
 					fileName.write(headers + 'Round,Step,Called Back?,Step 2 Pin #' + '\n')
 					headerBool = False
-				fileName.write(data + str(round_num) + ',' + str(step_num) + ',Yes,' + callback_pins.get(pin) + '\n')
+				fileName.write(data + str(roundNum) + ',' + str(stepNum) + ',Yes,' + callbackPins.get(pin) + '\n')
 			else:
 				if (headerBool):
 					fileName.write(headers + 'Round,Step,Called Back?,Step 2 Pin #' + '\n')
 					headerBool = False
-				fileName.write(data + str(round_num) + ',' + str(step_num) + ',No,' + '\n')
+				fileName.write(data + str(roundNum) + ',' + str(stepNum) + ',No,' + '\n')
 		else:
 			if (headerBool):
 				fileName.write(headers + 'Round,Step' + '\n')
 				headerBool = False
-			fileName.write(data + str(round_num) + ',' + str(step_num) + '\n')
+			fileName.write(data + str(roundNum) + ',' + str(stepNum) + '\n')
 
 		driver.execute_script("window.history.go(-1)")
 
